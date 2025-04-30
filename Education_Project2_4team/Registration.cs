@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity;
-using System.Data.SQLite;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
 using Education_Project2_4team;
 
 namespace Education_Project2_4team
 {
     public partial class Registration : Form
     {
-        //ApplicationContext db;
+        ApplicationContext db;
+
         public Registration()
         {
             InitializeComponent();
-            //db = new ApplicationContext();
+            db = new ApplicationContext();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -46,27 +47,27 @@ namespace Education_Project2_4team
             {
                 MessageBox.Show("Пароли не совпадают");
             }
-        //    try
-        //    {
-        //        using (var db = new UsersContext())
-        //        {
-        //            var user = new User
-        //            {
-        //                Name = name,
-        //                Surname = surname,
-        //                Login = login,
-        //                Password = password  
-        //            };
+            try
+            {
+                using (var db = new UsersContext())
+                {
+                    var user = new User
+                    {
+                        Name = name,
+                        Surname = surname,
+                        Login = login,
+                        Password = password
+                    };
 
-        //            db.Users.Add(user);
-        //            db.SaveChanges();
-        //            MessageBox.Show("Регистрация успешна!");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ошибка: {ex.Message}");
-        //    }
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    MessageBox.Show("Регистрация успешна!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}");
+            }
         }
     }
 }

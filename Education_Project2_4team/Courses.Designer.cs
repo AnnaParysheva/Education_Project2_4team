@@ -37,15 +37,20 @@
             this.ColumnCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
+            this.btnAdd.AutoSize = true;
             this.btnAdd.BackColor = System.Drawing.SystemColors.Info;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.Location = new System.Drawing.Point(12, 391);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(124, 47);
+            this.btnAdd.Size = new System.Drawing.Size(128, 47);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Добавить курс";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -53,7 +58,10 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.AutoSize = true;
             this.btnDelete.BackColor = System.Drawing.SystemColors.Info;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDelete.Location = new System.Drawing.Point(163, 391);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(147, 47);
@@ -64,10 +72,13 @@
             // 
             // btnRedact
             // 
+            this.btnRedact.AutoSize = true;
             this.btnRedact.BackColor = System.Drawing.SystemColors.Info;
+            this.btnRedact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedact.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRedact.Location = new System.Drawing.Point(335, 391);
             this.btnRedact.Name = "btnRedact";
-            this.btnRedact.Size = new System.Drawing.Size(165, 47);
+            this.btnRedact.Size = new System.Drawing.Size(171, 47);
             this.btnRedact.TabIndex = 4;
             this.btnRedact.Text = "Редактировать курс";
             this.btnRedact.UseVisualStyleBackColor = false;
@@ -82,7 +93,7 @@
             this.ColumnDate,
             this.ColumnCategory,
             this.ColumnDescription});
-            this.dataGridView1.Location = new System.Drawing.Point(50, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(63, 123);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -132,18 +143,46 @@
             this.textBox1.Text = "Подобрали курсы";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.SystemColors.Info;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(63, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 30);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Фильтр";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(229, 64);
+            this.comboBox1.MaximumSize = new System.Drawing.Size(150, 0);
+            this.comboBox1.MinimumSize = new System.Drawing.Size(150, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(150, 24);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRedact);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Form1";
+            this.Name = "Courses";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -161,6 +200,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescription;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
