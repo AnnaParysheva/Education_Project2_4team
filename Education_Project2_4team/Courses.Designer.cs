@@ -45,38 +45,38 @@
             // btnAdd
             // 
             this.btnAdd.AutoSize = true;
-            this.btnAdd.BackColor = System.Drawing.SystemColors.Info;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAdd.Location = new System.Drawing.Point(12, 391);
+            this.btnAdd.Location = new System.Drawing.Point(394, 372);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(128, 47);
+            this.btnAdd.Size = new System.Drawing.Size(188, 47);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Добавить курс";
+            this.btnAdd.Text = "Добавить в избранное";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.AutoSize = true;
-            this.btnDelete.BackColor = System.Drawing.SystemColors.Info;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(163, 391);
+            this.btnDelete.Location = new System.Drawing.Point(598, 372);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(147, 47);
+            this.btnDelete.Size = new System.Drawing.Size(181, 47);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Удалить курс";
+            this.btnDelete.Text = "Перейти в избранное";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRedact
             // 
             this.btnRedact.AutoSize = true;
-            this.btnRedact.BackColor = System.Drawing.SystemColors.Info;
+            this.btnRedact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnRedact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRedact.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRedact.Location = new System.Drawing.Point(335, 391);
+            this.btnRedact.Location = new System.Drawing.Point(23, 372);
             this.btnRedact.Name = "btnRedact";
             this.btnRedact.Size = new System.Drawing.Size(171, 47);
             this.btnRedact.TabIndex = 4;
@@ -93,7 +93,7 @@
             this.ColumnDate,
             this.ColumnCategory,
             this.ColumnDescription});
-            this.dataGridView1.Location = new System.Drawing.Point(63, 123);
+            this.dataGridView1.Location = new System.Drawing.Point(51, 120);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -140,7 +140,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(280, 34);
             this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Подобрали курсы";
+            this.textBox1.Text = "Подбор курсов";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
@@ -149,31 +149,34 @@
             this.button1.BackColor = System.Drawing.SystemColors.Info;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(63, 64);
+            this.button1.Location = new System.Drawing.Point(66, 64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 30);
+            this.button1.Size = new System.Drawing.Size(118, 30);
             this.button1.TabIndex = 6;
             this.button1.Text = "Фильтр";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Info;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(229, 64);
+            this.comboBox1.Location = new System.Drawing.Point(209, 64);
             this.comboBox1.MaximumSize = new System.Drawing.Size(150, 0);
             this.comboBox1.MinimumSize = new System.Drawing.Size(150, 0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 24);
+            this.comboBox1.Size = new System.Drawing.Size(150, 26);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Категория";
             // 
             // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(159)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);

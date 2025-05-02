@@ -1,26 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Sqlite;
-using Education_Project2_4team;
 
 namespace Education_Project2_4team
 {
     public partial class Registration : Form
     {
-        ApplicationContext db;
-
+        public event Action<User> UserSaved;
         public Registration()
         {
             InitializeComponent();
-            db = new ApplicationContext();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -35,6 +23,14 @@ namespace Education_Project2_4team
             var login= txtBoxLogin.Text.Trim();
             var password= txtBoxPassword.Text.Trim();
             var passRepeat= txtBoxPassRepeat.Text.Trim();
+            if (name.Length == 0)
+            {
+                MessageBox.Show("Поле 'Имя' не должно быть пустым");
+            }
+            if (surname.Length == 0)
+            {
+                MessageBox.Show("Поле 'Фамилия' не должно быть пустым");
+            }
             if (login.Length < 4)
             {
                 MessageBox.Show("Логин должен содержать не менее 4 символов");
@@ -61,6 +57,7 @@ namespace Education_Project2_4team
 
                     db.Users.Add(user);
                     db.SaveChanges();
+                    UserSaved?.Invoke(user);
                     MessageBox.Show("Регистрация успешна!");
                 }
             }

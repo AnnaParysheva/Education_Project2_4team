@@ -40,6 +40,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -67,21 +70,18 @@
             this.ColumnDate.HeaderText = "Дата";
             this.ColumnDate.MinimumWidth = 10;
             this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.Width = 175;
             // 
             // ColumnCategory
             // 
             this.ColumnCategory.HeaderText = "Категория";
             this.ColumnCategory.MinimumWidth = 10;
             this.ColumnCategory.Name = "ColumnCategory";
-            this.ColumnCategory.Width = 175;
             // 
             // ColumnDescription
             // 
             this.ColumnDescription.HeaderText = "Описание";
             this.ColumnDescription.MinimumWidth = 10;
             this.ColumnDescription.Name = "ColumnDescription";
-            this.ColumnDescription.Width = 175;
             // 
             // textBox1
             // 

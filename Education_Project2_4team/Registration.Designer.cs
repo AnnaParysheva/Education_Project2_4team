@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxLogin = new System.Windows.Forms.TextBox();
             this.txtBoxName = new System.Windows.Forms.TextBox();
@@ -175,12 +176,13 @@
             this.btnRegistration.Name = "btnRegistration";
             this.btnRegistration.Size = new System.Drawing.Size(224, 46);
             this.btnRegistration.TabIndex = 19;
-            this.btnRegistration.Text = "Зарегестрироваться";
+            this.btnRegistration.Text = "Зарегистрироваться";
             this.btnRegistration.UseVisualStyleBackColor = false;
             this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(543, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 239);
@@ -207,6 +209,7 @@
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.txtBoxLogin);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Registration";
             this.Text = "Registration";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

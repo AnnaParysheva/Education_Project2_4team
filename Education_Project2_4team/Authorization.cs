@@ -15,12 +15,9 @@ namespace Education_Project2_4team
 {
     public partial class Authorization : Form
     {
-        ApplicationContext db;
-        public event Action<User> UserSaved;
         public Authorization()
         {
             InitializeComponent();
-            db = new ApplicationContext();
             this.txtBoxPassword.AutoSize = false;
             this.txtBoxPassword.Size = new Size(this.txtBoxPassword.Size.Width, 50);
 
