@@ -43,28 +43,28 @@ namespace Education_Project2_4team
             {
                 MessageBox.Show("Пароли не совпадают");
             }
-            try
+            //try
+            //{
+            using (var db = new UsersContext())
             {
-                using (var db = new UsersContext())
+                db.Database.EnsureCreated();
+                var user = new User
                 {
-                    var user = new User
-                    {
-                        Name = name,
-                        Surname = surname,
-                        Login = login,
-                        Password = password
-                    };
+                    Name = name,
+                    Surname = surname,
+                    Login = login,
+                    Password = password
+                };
 
-                    db.Users.Add(user);
-                    db.SaveChanges();
-                    UserSaved?.Invoke(user);
-                    MessageBox.Show("Регистрация успешна!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}");
+                db.Users.Add(user);
+                db.SaveChanges();
+                UserSaved?.Invoke(user);
+                MessageBox.Show("Регистрация успешна!");
             }
         }
+        //catch (Exception ex)
+        //{
+        //    MessageBox.Show($"Ошибка: {ex.Message}");
+        //}
     }
 }
