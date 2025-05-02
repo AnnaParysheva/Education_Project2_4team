@@ -17,10 +17,27 @@ namespace Education_Project2_4team
         [STAThread]
         static void Main()
         {
+            EnsureAdminExists();
             Batteries.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registration());
+            Application.Run(new Authorization());
+        }
+        static void EnsureAdminExists()
+        {
+            using (var db = new UsersContext())
+            {
+                var admin = new User
+                {
+                    Name = "Admin",
+                    Surname = "System",
+                    Login = "admin",
+                    Password = "admin"
+                };
+                db.Users.Add(admin);
+                db.SaveChanges();
+            }
+
         }
     }
 }

@@ -19,10 +19,10 @@ namespace Education_Project2_4team
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             var name = txtBoxName.Text.Trim();
-            var surname= txtBoxSurname.Text.Trim();
-            var login= txtBoxLogin.Text.Trim();
-            var password= txtBoxPassword.Text.Trim();
-            var passRepeat= txtBoxPassRepeat.Text.Trim();
+            var surname = txtBoxSurname.Text.Trim();
+            var login = txtBoxLogin.Text.Trim();
+            var password = txtBoxPassword.Text.Trim();
+            var passRepeat = txtBoxPassRepeat.Text.Trim();
             if (name.Length == 0)
             {
                 MessageBox.Show("Поле 'Имя' не должно быть пустым");
@@ -43,28 +43,31 @@ namespace Education_Project2_4team
             {
                 MessageBox.Show("Пароли не совпадают");
             }
-            //try
-            //{
-            using (var db = new UsersContext())
+            try
             {
-                db.Database.EnsureCreated();
-                var user = new User
+                using (var db = new UsersContext())
                 {
-                    Name = name,
-                    Surname = surname,
-                    Login = login,
-                    Password = password
-                };
+                    db.Database.EnsureCreated();
+                    var user = new User
+                    {
+                        Name = name,
+                        Surname = surname,
+                        Login = login,
+                        Password = password
+                    };
 
-                db.Users.Add(user);
-                db.SaveChanges();
-                UserSaved?.Invoke(user);
-                MessageBox.Show("Регистрация успешна!");
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    UserSaved?.Invoke(user);
+                    MessageBox.Show("Регистрация успешна!");
+                    this.DialogResult = DialogResult.OK;
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}");
             }
         }
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show($"Ошибка: {ex.Message}");
-        //}
     }
 }

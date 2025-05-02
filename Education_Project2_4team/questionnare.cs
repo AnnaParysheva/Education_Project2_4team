@@ -16,5 +16,13 @@ namespace Education_Project2_4team
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var questionnaireForm = new Courses();
+            this.Hide();
+            questionnaireForm.ShowDialog();
+            this.Close();
+        }
     }
 }

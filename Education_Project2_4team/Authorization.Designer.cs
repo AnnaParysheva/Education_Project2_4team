@@ -33,7 +33,7 @@
             this.txtBoxLogin = new System.Windows.Forms.TextBox();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
-            this.btnLogInAsACustomer = new System.Windows.Forms.Button();
+            this.btnLogInAsAnAdministrtion = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -87,18 +87,18 @@
             this.btnEnter.UseVisualStyleBackColor = false;
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
-            // btnLogInAsACustomer
+            // btnLogInAsAnAdministrtion
             // 
-            this.btnLogInAsACustomer.BackColor = System.Drawing.Color.Orange;
-            this.btnLogInAsACustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogInAsACustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLogInAsACustomer.Location = new System.Drawing.Point(593, 291);
-            this.btnLogInAsACustomer.Name = "btnLogInAsACustomer";
-            this.btnLogInAsACustomer.Size = new System.Drawing.Size(169, 44);
-            this.btnLogInAsACustomer.TabIndex = 4;
-            this.btnLogInAsACustomer.Text = "Войти как администратор";
-            this.btnLogInAsACustomer.UseVisualStyleBackColor = false;
-            this.btnLogInAsACustomer.Click += new System.EventHandler(this.btnLogInAsACustomer_Click);
+            this.btnLogInAsAnAdministrtion.BackColor = System.Drawing.Color.Orange;
+            this.btnLogInAsAnAdministrtion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogInAsAnAdministrtion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnLogInAsAnAdministrtion.Location = new System.Drawing.Point(593, 291);
+            this.btnLogInAsAnAdministrtion.Name = "btnLogInAsAnAdministrtion";
+            this.btnLogInAsAnAdministrtion.Size = new System.Drawing.Size(169, 44);
+            this.btnLogInAsAnAdministrtion.TabIndex = 4;
+            this.btnLogInAsAnAdministrtion.Text = "Войти как администратор";
+            this.btnLogInAsAnAdministrtion.UseVisualStyleBackColor = false;
+            this.btnLogInAsAnAdministrtion.Click += new System.EventHandler(this.btnLogInAsAnAdministrator_Click);
             // 
             // btn_register
             // 
@@ -158,7 +158,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_register);
-            this.Controls.Add(this.btnLogInAsACustomer);
+            this.Controls.Add(this.btnLogInAsAnAdministrtion);
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.txtBoxLogin);
@@ -177,7 +177,7 @@
         private System.Windows.Forms.TextBox txtBoxLogin;
         private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Button btnEnter;
-        private System.Windows.Forms.Button btnLogInAsACustomer;
+        private System.Windows.Forms.Button btnLogInAsAnAdministrtion;
         private System.Windows.Forms.Button btn_register;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
