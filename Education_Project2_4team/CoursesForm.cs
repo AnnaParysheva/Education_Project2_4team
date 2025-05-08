@@ -17,18 +17,25 @@ namespace Education_Project2_4team
     {
         private readonly bool isCustomer;
         private CoursesContext db;
-        public CoursesForm(bool isCustomer)
+        private List<Courses> recommendedCourses;
+        public CoursesForm(bool isCustomer, List<Courses> recommendedCourses = null)
         {
             InitializeComponent();
             this.isCustomer = isCustomer;
+            this.recommendedCourses = recommendedCourses;
             db = new CoursesContext();
             InitializeDatabase();
             SetUpForm();
         }
+
         private void InitializeDatabase()
         {
             db.Database.EnsureCreated();
-            DisplayCourses();
+
+            if (recommendedCourses != null)
+                DisplayRecommendedCourses(recommendedCourses);
+            else
+                DisplayCourses();
         }
         private void SetUpForm()
         {
@@ -38,6 +45,50 @@ namespace Education_Project2_4team
                 btnRedact.Enabled = false;
                 btnDeleteCourse.Enabled = false;
             }
+        }
+        public void DisplayRecommendedCourses(List<Courses> courses)
+        {
+            dataGridViewInformation.AutoGenerateColumns = false;
+            dataGridViewInformation.Columns.Clear();
+
+            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Title",
+                HeaderText = "Название курса",
+                Width = 200
+            });
+            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Description",
+                HeaderText = "Описание",
+                Width = 150
+            });
+            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Category",
+                HeaderText = "Категория",
+                Width = 150
+            });
+            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Duration",
+                HeaderText = "Продолжительность",
+                Width = 120
+            });
+            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "EducationalForm",
+                HeaderText = "Форма обучения",
+                Width = 120
+            });
+            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "LevelOfPreparation",
+                HeaderText = "Уровень подготовки",
+                Width = 150
+            });
+            dataGridViewInformation.DataSource = courses;
+            dataGridViewInformation.RowHeadersVisible = false;
         }
         private void AddCourse_CourseSaved(Courses course)
         {

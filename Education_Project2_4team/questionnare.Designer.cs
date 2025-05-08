@@ -121,7 +121,7 @@
             this.btnChooseCourses.TabIndex = 4;
             this.btnChooseCourses.Text = "Подобрать курсы";
             this.btnChooseCourses.UseVisualStyleBackColor = false;
-            this.btnChooseCourses.Click += new System.EventHandler(this.button1_Click);
+            this.btnChooseCourses.Click += new System.EventHandler(this.btnChooseCourses_Click);
             // 
             // pictureBox1
             // 
