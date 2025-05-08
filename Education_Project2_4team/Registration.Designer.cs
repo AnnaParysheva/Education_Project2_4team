@@ -156,6 +156,7 @@
             this.txtBoxPassword.Location = new System.Drawing.Point(210, 294);
             this.txtBoxPassword.Multiline = true;
             this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.PasswordChar = '•';
             this.txtBoxPassword.Size = new System.Drawing.Size(308, 36);
             this.txtBoxPassword.TabIndex = 17;
             // 
@@ -165,6 +166,7 @@
             this.txtBoxPassRepeat.Location = new System.Drawing.Point(210, 359);
             this.txtBoxPassRepeat.Multiline = true;
             this.txtBoxPassRepeat.Name = "txtBoxPassRepeat";
+            this.txtBoxPassRepeat.PasswordChar = '•';
             this.txtBoxPassRepeat.Size = new System.Drawing.Size(308, 36);
             this.txtBoxPassRepeat.TabIndex = 18;
             // 

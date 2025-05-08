@@ -19,7 +19,7 @@ namespace Education_Project2_4team
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var questionnaireForm = new Courses();
+            var questionnaireForm = new CoursesForm(true);
             this.Hide();
             questionnaireForm.ShowDialog();
             this.Close();

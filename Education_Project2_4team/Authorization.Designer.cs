@@ -92,7 +92,7 @@
             this.btnLogInAsAnAdministrtion.BackColor = System.Drawing.Color.Orange;
             this.btnLogInAsAnAdministrtion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogInAsAnAdministrtion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLogInAsAnAdministrtion.Location = new System.Drawing.Point(593, 291);
+            this.btnLogInAsAnAdministrtion.Location = new System.Drawing.Point(572, 291);
             this.btnLogInAsAnAdministrtion.Name = "btnLogInAsAnAdministrtion";
             this.btnLogInAsAnAdministrtion.Size = new System.Drawing.Size(169, 44);
             this.btnLogInAsAnAdministrtion.TabIndex = 4;
@@ -102,10 +102,11 @@
             // 
             // btn_register
             // 
+            this.btn_register.AutoSize = true;
             this.btn_register.BackColor = System.Drawing.Color.Orange;
             this.btn_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_register.Location = new System.Drawing.Point(490, 357);
+            this.btn_register.Location = new System.Drawing.Point(469, 352);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(181, 42);
             this.btn_register.TabIndex = 5;

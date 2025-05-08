@@ -1,6 +1,6 @@
 ﻿namespace Education_Project2_4team
 {
-    partial class Courses
+    partial class CoursesForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRedact = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewInformation = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnAddCourse = new System.Windows.Forms.Button();
+            this.btnDeleteCourse = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -48,7 +45,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAdd.Location = new System.Drawing.Point(394, 372);
+            this.btnAdd.Location = new System.Drawing.Point(708, 448);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(188, 47);
             this.btnAdd.TabIndex = 2;
@@ -62,7 +59,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(598, 372);
+            this.btnDelete.Location = new System.Drawing.Point(912, 448);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(181, 47);
             this.btnDelete.TabIndex = 3;
@@ -76,7 +73,7 @@
             this.btnRedact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnRedact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRedact.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRedact.Location = new System.Drawing.Point(23, 372);
+            this.btnRedact.Location = new System.Drawing.Point(35, 448);
             this.btnRedact.Name = "btnRedact";
             this.btnRedact.Size = new System.Drawing.Size(171, 47);
             this.btnRedact.TabIndex = 4;
@@ -84,50 +81,27 @@
             this.btnRedact.UseVisualStyleBackColor = false;
             this.btnRedact.Click += new System.EventHandler(this.btnRedact_Click);
             // 
-            // dataGridView1
+            // dataGridViewInformation
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnTitle,
-            this.ColumnDate,
-            this.ColumnCategory,
-            this.ColumnDescription});
-            this.dataGridView1.Location = new System.Drawing.Point(51, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(711, 49);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // ColumnTitle
-            // 
-            this.ColumnTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnTitle.HeaderText = "Название курса";
-            this.ColumnTitle.MinimumWidth = 10;
-            this.ColumnTitle.Name = "ColumnTitle";
-            // 
-            // ColumnDate
-            // 
-            this.ColumnDate.HeaderText = "Дата";
-            this.ColumnDate.MinimumWidth = 10;
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.Width = 175;
-            // 
-            // ColumnCategory
-            // 
-            this.ColumnCategory.HeaderText = "Категория";
-            this.ColumnCategory.MinimumWidth = 10;
-            this.ColumnCategory.Name = "ColumnCategory";
-            this.ColumnCategory.Width = 175;
-            // 
-            // ColumnDescription
-            // 
-            this.ColumnDescription.HeaderText = "Описание";
-            this.ColumnDescription.MinimumWidth = 10;
-            this.ColumnDescription.Name = "ColumnDescription";
-            this.ColumnDescription.Width = 175;
+            this.dataGridViewInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewInformation.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewInformation.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewInformation.GridColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewInformation.Location = new System.Drawing.Point(35, 68);
+            this.dataGridViewInformation.Name = "dataGridViewInformation";
+            this.dataGridViewInformation.RowHeadersVisible = false;
+            this.dataGridViewInformation.RowHeadersWidth = 51;
+            this.dataGridViewInformation.RowTemplate.Height = 24;
+            this.dataGridViewInformation.Size = new System.Drawing.Size(1085, 335);
+            this.dataGridViewInformation.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -138,56 +112,55 @@
             this.textBox1.Location = new System.Drawing.Point(256, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 34);
+            this.textBox1.Size = new System.Drawing.Size(628, 34);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Подбор курсов";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // btnAddCourse
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.SystemColors.Info;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(66, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Фильтр";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddCourse.AutoSize = true;
+            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddCourse.Location = new System.Drawing.Point(229, 448);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(171, 47);
+            this.btnAddCourse.TabIndex = 8;
+            this.btnAddCourse.Text = "Добавить курс";
+            this.btnAddCourse.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // btnDeleteCourse
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(209, 64);
-            this.comboBox1.MaximumSize = new System.Drawing.Size(150, 0);
-            this.comboBox1.MinimumSize = new System.Drawing.Size(150, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 26);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Категория";
+            this.btnDeleteCourse.AutoSize = true;
+            this.btnDeleteCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnDeleteCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteCourse.Location = new System.Drawing.Point(426, 448);
+            this.btnDeleteCourse.Name = "btnDeleteCourse";
+            this.btnDeleteCourse.Size = new System.Drawing.Size(171, 47);
+            this.btnDeleteCourse.TabIndex = 9;
+            this.btnDeleteCourse.Text = "Удалить курс";
+            this.btnDeleteCourse.UseVisualStyleBackColor = false;
             // 
-            // Courses
+            // CoursesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(159)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1148, 517);
+            this.Controls.Add(this.btnDeleteCourse);
+            this.Controls.Add(this.btnAddCourse);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewInformation);
             this.Controls.Add(this.btnRedact);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Courses";
+            this.Name = "CoursesForm";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,14 +170,10 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRedact;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescription;
+        private System.Windows.Forms.DataGridView dataGridViewInformation;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAddCourse;
+        private System.Windows.Forms.Button btnDeleteCourse;
     }
 }
 

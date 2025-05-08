@@ -19,8 +19,6 @@ namespace Education_Project2_4team
         public Authorization()
         {
             InitializeComponent();
-            this.txtBoxPassword.AutoSize = false;
-            this.txtBoxPassword.Size = new Size(this.txtBoxPassword.Size.Width, 50);
 
         }
 
@@ -87,7 +85,7 @@ namespace Education_Project2_4team
 
         private void btnLogInAsAnAdministrator_Click(object sender, EventArgs e)
         {
-            var questionnaireForm = new Courses();
+            var questionnaireForm = new CoursesForm(false);
             this.Hide();
             questionnaireForm.ShowDialog();
             this.Close();
