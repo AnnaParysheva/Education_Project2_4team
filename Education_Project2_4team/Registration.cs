@@ -5,7 +5,7 @@ namespace Education_Project2_4team
 {
     public partial class Registration : Form
     {
-        public event Action<User> UserSaved;
+        public event Action<Users> UserSaved;
         public Registration()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace Education_Project2_4team
                 using (var db = new UsersContext())
                 {
                     db.Database.EnsureCreated();
-                    var user = new User
+                    var user = new Users
                     {
                         Name = name,
                         Surname = surname,

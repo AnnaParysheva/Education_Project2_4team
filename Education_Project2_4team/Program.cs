@@ -27,7 +27,7 @@ namespace Education_Project2_4team
         {
             using (var db = new UsersContext())
             {
-                var admin = new User
+                var admin = new Users
                 {
                     Name = "Admin",
                     Surname = "System",

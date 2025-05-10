@@ -13,7 +13,7 @@ namespace Education_Project2_4team
 {
     public class UsersContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -22,7 +22,7 @@ namespace Education_Project2_4team
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Users>()
                 .ToTable("Users")
                 .HasKey(u => u.Id);
         }

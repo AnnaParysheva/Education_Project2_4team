@@ -175,7 +175,7 @@
     <Compile Include="classesform\Courses.cs" />
     <Compile Include="classesform\CoursesContext.cs" />
     <Compile Include="classesform\Favourites.cs" />
-    <Compile Include="classesform\User.cs" />
+    <Compile Include="classesform\Users.cs" />
     <Compile Include="classesform\UsersContext.cs" />
     <Compile Include="CoursesForm.cs">
       <SubType>Form</SubType>
@@ -183,11 +183,11 @@
     <Compile Include="CoursesForm.Designer.cs">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
+    <Compile Include="FavouritesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="FavouritesForm.Designer.cs">
+      <DependentUpon>FavouritesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,8 +212,8 @@
     <EmbeddedResource Include="CoursesForm.resx">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="FavouritesForm.resx">
+      <DependentUpon>FavouritesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

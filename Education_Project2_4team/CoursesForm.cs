@@ -201,7 +201,7 @@ namespace Education_Project2_4team
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var Form = new Profile();
+            var Form = new FavouritesForm();
             this.Hide();
             Form.ShowDialog();
             this.Close();

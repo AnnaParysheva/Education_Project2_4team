@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Education_Project2_4team
 {
-    public partial class Profile : Form
+    public partial class FavouritesForm : Form
     {
-        public Profile()
+        public FavouritesForm()
         {
             InitializeComponent();
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Education_Project2_4team
 {
-    public class User
+    public class Users
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -15,7 +15,7 @@ namespace Education_Project2_4team
 {
     public partial class Authorization : Form
     {
-        public User CurrentUser { get; private set; }
+        public Users CurrentUser { get; private set; }
         public Authorization()
         {
             InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿namespace Education_Project2_4team
 {
-    partial class Profile
+    partial class FavouritesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -138,7 +138,7 @@
             this.EducationalForm.Name = "EducationalForm";
             this.EducationalForm.Width = 125;
             // 
-            // Profile
+            // FavouritesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,8 +147,8 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Name = "Profile";
-            this.Text = "Profile";
+            this.Name = "FavouritesForm";
+            this.Text = "FavouritesForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
