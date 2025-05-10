@@ -38,6 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // txtBoxLogin
             // 
             this.txtBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBoxLogin.Location = new System.Drawing.Point(394, 129);
+            this.txtBoxLogin.Location = new System.Drawing.Point(301, 150);
             this.txtBoxLogin.Multiline = true;
             this.txtBoxLogin.Name = "txtBoxLogin";
             this.txtBoxLogin.Size = new System.Drawing.Size(308, 36);
@@ -67,7 +68,7 @@
             // txtBoxPassword
             // 
             this.txtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBoxPassword.Location = new System.Drawing.Point(394, 231);
+            this.txtBoxPassword.Location = new System.Drawing.Point(301, 248);
             this.txtBoxPassword.Multiline = true;
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.PasswordChar = '•';
@@ -79,7 +80,7 @@
             this.btnEnter.BackColor = System.Drawing.Color.Orange;
             this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnEnter.Location = new System.Drawing.Point(394, 291);
+            this.btnEnter.Location = new System.Drawing.Point(301, 312);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(151, 44);
             this.btnEnter.TabIndex = 3;
@@ -92,7 +93,7 @@
             this.btnLogInAsAnAdministrtion.BackColor = System.Drawing.Color.Orange;
             this.btnLogInAsAnAdministrtion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogInAsAnAdministrtion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLogInAsAnAdministrtion.Location = new System.Drawing.Point(572, 291);
+            this.btnLogInAsAnAdministrtion.Location = new System.Drawing.Point(480, 312);
             this.btnLogInAsAnAdministrtion.Name = "btnLogInAsAnAdministrtion";
             this.btnLogInAsAnAdministrtion.Size = new System.Drawing.Size(169, 44);
             this.btnLogInAsAnAdministrtion.TabIndex = 4;
@@ -106,7 +107,7 @@
             this.btn_register.BackColor = System.Drawing.Color.Orange;
             this.btn_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_register.Location = new System.Drawing.Point(469, 352);
+            this.btn_register.Location = new System.Drawing.Point(370, 373);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(181, 42);
             this.btn_register.TabIndex = 5;
@@ -118,7 +119,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Info;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(394, 96);
+            this.textBox1.Location = new System.Drawing.Point(301, 117);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(128, 27);
@@ -130,7 +131,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Info;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(394, 199);
+            this.textBox2.Location = new System.Drawing.Point(301, 216);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 26);
@@ -141,7 +142,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(102, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 117);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 239);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,12 +150,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(615, 254);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(157, 20);
+            this.checkBoxShowPassword.TabIndex = 22;
+            this.checkBoxShowPassword.Text = "Показать пароль";
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -183,6 +197,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBoxShowPassword;
     }
 }
 

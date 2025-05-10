@@ -42,6 +42,8 @@
             this.txtBoxPassRepeat = new System.Windows.Forms.TextBox();
             this.btnRegistration = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
+            this.checkBoxRepeatPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,8 +175,9 @@
             // btnRegistration
             // 
             this.btnRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRegistration.Location = new System.Drawing.Point(553, 392);
+            this.btnRegistration.Location = new System.Drawing.Point(717, 395);
             this.btnRegistration.Name = "btnRegistration";
             this.btnRegistration.Size = new System.Drawing.Size(224, 46);
             this.btnRegistration.TabIndex = 19;
@@ -185,19 +188,45 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(543, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(717, 105);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 239);
+            this.pictureBox1.Size = new System.Drawing.Size(224, 218);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(524, 303);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(157, 20);
+            this.checkBoxShowPassword.TabIndex = 21;
+            this.checkBoxShowPassword.Text = "Показать пароль";
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.CheckBoxShowPassword_CheckedChanged);
+            // 
+            // checkBoxRepeatPassword
+            // 
+            this.checkBoxRepeatPassword.AutoSize = true;
+            this.checkBoxRepeatPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxRepeatPassword.Location = new System.Drawing.Point(524, 368);
+            this.checkBoxRepeatPassword.Name = "checkBoxRepeatPassword";
+            this.checkBoxRepeatPassword.Size = new System.Drawing.Size(157, 20);
+            this.checkBoxRepeatPassword.TabIndex = 22;
+            this.checkBoxRepeatPassword.Text = "Показать пароль";
+            this.checkBoxRepeatPassword.UseVisualStyleBackColor = true;
+            this.checkBoxRepeatPassword.CheckedChanged += new System.EventHandler(this.checkBoxRepeatPassword_CheckedChanged);
             // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(159)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(952, 453);
+            this.Controls.Add(this.checkBoxRepeatPassword);
+            this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistration);
             this.Controls.Add(this.txtBoxPassRepeat);
@@ -235,5 +264,7 @@
         private System.Windows.Forms.TextBox txtBoxPassRepeat;
         private System.Windows.Forms.Button btnRegistration;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBoxShowPassword;
+        private System.Windows.Forms.CheckBox checkBoxRepeatPassword;
     }
 }

@@ -201,22 +201,58 @@ namespace Education_Project2_4team
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var Form = new FavouritesForm();
-            this.Hide();
-            Form.ShowDialog();
-            this.Close();
+            if (!(dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse))
+            {
+                MessageBox.Show("Пожалуйста, выберите курс для удаления.", "Предупреждение",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var result = MessageBox.Show($"Вы уверены, что хотите удалить курс \"{selectedCourse.Title}\"?",
+                                         "Подтверждение удаления",
+                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (var db = new CoursesContext())
+                {
+                    var courseToDelete = db.Courses.Find(selectedCourse.IDCourses);
+                    if (courseToDelete != null)
+                    {
+                        db.Courses.Remove(courseToDelete);
+                        db.SaveChanges();
+                        MessageBox.Show("Курс удалён.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DisplayCourses();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Курс не найден в базе данных.", "Ошибка",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnRedact_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse)
+            {
+                var editCourseForm = new AddCourse(selectedCourse); 
+                editCourseForm.EventSaved += (updatedCourse) => DisplayCourses();
+                editCourseForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите курс для редактирования.", "Предупреждение",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var addCourse = new AddCourse();
-            addCourse.EventSaved += AddCourse_CourseSaved;
-            addCourse.Show();
+            addCourse.EventSaved += (Courses newCourse) => DisplayCourses();
+            addCourse.ShowDialog();
         }
     }
 }

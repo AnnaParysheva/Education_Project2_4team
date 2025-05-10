@@ -82,7 +82,7 @@ namespace Education_Project2_4team
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.BackColor = System.Drawing.SystemColors.Info;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -90,7 +90,7 @@ namespace Education_Project2_4team
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(393, 44);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Информация о новом курсе";
+            this.label7.Text = "Информация о курсе";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtDescription
@@ -221,6 +221,7 @@ namespace Education_Project2_4team
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         } 
         #endregion
         private ComboBox comboBoxDuration;

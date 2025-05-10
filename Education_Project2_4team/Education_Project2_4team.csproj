@@ -175,6 +175,7 @@
     <Compile Include="classesform\Courses.cs" />
     <Compile Include="classesform\CoursesContext.cs" />
     <Compile Include="classesform\Favourites.cs" />
+    <Compile Include="classesform\FavouritesContext.cs" />
     <Compile Include="classesform\Users.cs" />
     <Compile Include="classesform\UsersContext.cs" />
     <Compile Include="CoursesForm.cs">

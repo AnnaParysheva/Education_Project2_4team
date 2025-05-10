@@ -85,10 +85,40 @@ namespace Education_Project2_4team
 
         private void btnLogInAsAnAdministrator_Click(object sender, EventArgs e)
         {
-            var questionnaireForm = new CoursesForm(false);
-            this.Hide();
-            questionnaireForm.ShowDialog();
-            this.Close();
+            var login = txtBoxLogin.Text.Trim();
+            var password = txtBoxPassword.Text.Trim();
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Введите логин и пароль");
+                return;
+            }
+            try
+            {
+                using (var db = new UsersContext())
+                {
+                    if (login == "admin" && password == "admin")
+                    {
+                        var questionnaireForm = new CoursesForm(false);
+                        this.Hide();
+                        questionnaireForm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неверный логин или пароль");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка авторизации: {ex.Message}");
+            }
+            
+        }
+
+        private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtBoxPassword.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '•';
         }
     }
 }
