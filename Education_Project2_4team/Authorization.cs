@@ -40,7 +40,7 @@ namespace Education_Project2_4team
                     {
                         CurrentUser = user;
                         this.DialogResult = DialogResult.OK;
-                        var questionnaireForm = new questionnare();
+                        var questionnaireForm = new questionnare(user.Id);
                         this.Hide(); 
                         questionnaireForm.ShowDialog();
                         this.Close();

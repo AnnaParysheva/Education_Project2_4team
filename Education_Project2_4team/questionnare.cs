@@ -13,17 +13,18 @@ namespace Education_Project2_4team
 {
     public partial class questionnare : Form
     {
-        public questionnare()
+        private int userId;
+        public questionnare(int userId)
         {
             InitializeComponent();
+            this.userId = userId;
         }
-
         private void btnChooseCourses_Click(object sender, EventArgs e)
         {
             var recommendedCourses = RecommendCourses();
             if (recommendedCourses.Any())
             {
-                var form = new CoursesForm(true, recommendedCourses);
+                var form = new CoursesForm(true, recommendedCourses,userId);
                 this.Hide();
                 form.ShowDialog();
                 this.Close();

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnAddToFavourites = new System.Windows.Forms.Button();
+            this.btnOpenFavourites = new System.Windows.Forms.Button();
             this.btnRedact = new System.Windows.Forms.Button();
             this.dataGridViewInformation = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,31 +39,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAdd
+            // btnAddToFavourites
             // 
-            this.btnAdd.AutoSize = true;
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAdd.Location = new System.Drawing.Point(708, 448);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(188, 47);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Добавить в избранное";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAddToFavourites.AutoSize = true;
+            this.btnAddToFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnAddToFavourites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToFavourites.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddToFavourites.Location = new System.Drawing.Point(708, 448);
+            this.btnAddToFavourites.Name = "btnAddToFavourites";
+            this.btnAddToFavourites.Size = new System.Drawing.Size(188, 47);
+            this.btnAddToFavourites.TabIndex = 2;
+            this.btnAddToFavourites.Text = "Добавить в избранное";
+            this.btnAddToFavourites.UseVisualStyleBackColor = false;
+            this.btnAddToFavourites.Click += new System.EventHandler(this.btnAddToFavourites_Click);
             // 
-            // btnDelete
+            // btnOpenFavourites
             // 
-            this.btnDelete.AutoSize = true;
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(912, 448);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(181, 47);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Перейти в избранное";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnOpenFavourites.AutoSize = true;
+            this.btnOpenFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnOpenFavourites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFavourites.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOpenFavourites.Location = new System.Drawing.Point(912, 448);
+            this.btnOpenFavourites.Name = "btnOpenFavourites";
+            this.btnOpenFavourites.Size = new System.Drawing.Size(181, 47);
+            this.btnOpenFavourites.TabIndex = 3;
+            this.btnOpenFavourites.Text = "Перейти в избранное";
+            this.btnOpenFavourites.UseVisualStyleBackColor = false;
+            this.btnOpenFavourites.Click += new System.EventHandler(this.btnOpenFavourites_Click);
             // 
             // btnRedact
             // 
@@ -84,14 +86,14 @@
             this.dataGridViewInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewInformation.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewInformation.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewInformation.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewInformation.GridColor = System.Drawing.SystemColors.Info;
             this.dataGridViewInformation.Location = new System.Drawing.Point(35, 68);
             this.dataGridViewInformation.Name = "dataGridViewInformation";
@@ -156,8 +158,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridViewInformation);
             this.Controls.Add(this.btnRedact);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnOpenFavourites);
+            this.Controls.Add(this.btnAddToFavourites);
             this.Name = "CoursesForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).EndInit();
@@ -167,8 +169,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAddToFavourites;
+        private System.Windows.Forms.Button btnOpenFavourites;
         private System.Windows.Forms.Button btnRedact;
         private System.Windows.Forms.DataGridView dataGridViewInformation;
         private System.Windows.Forms.TextBox textBox1;

@@ -13,7 +13,7 @@ namespace Education_Project2_4team
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite("Data Source=UsersDatabase.db");
+            options.UseSqlite("Data Source=UserDatabase.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

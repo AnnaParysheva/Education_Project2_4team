@@ -15,14 +15,16 @@ namespace Education_Project2_4team
 {
     public partial class CoursesForm : Form
     {
+        private int? userId;
         private readonly bool isCustomer;
         private CoursesContext db;
         private List<Courses> recommendedCourses;
-        public CoursesForm(bool isCustomer, List<Courses> recommendedCourses = null)
+        public CoursesForm(bool isCustomer, List<Courses> recommendedCourses = null, int? userId = null)
         {
             InitializeComponent();
             this.isCustomer = isCustomer;
             this.recommendedCourses = recommendedCourses;
+            this.userId = userId;
             db = new CoursesContext();
             InitializeDatabase();
             SetUpForm();
@@ -41,6 +43,7 @@ namespace Education_Project2_4team
         {
             if (isCustomer)
             {
+
                 btnAddCourse.Enabled = false;
                 btnRedact.Enabled = false;
                 btnDeleteCourse.Enabled = false;
@@ -90,21 +93,6 @@ namespace Education_Project2_4team
             dataGridViewInformation.DataSource = courses;
             dataGridViewInformation.RowHeadersVisible = false;
         }
-        private void AddCourse_CourseSaved(Courses course)
-        {
-
-            var currentDataSource = dataGridViewInformation.DataSource as List<Courses>;
-            if (currentDataSource != null)
-            {
-                currentDataSource.Add(course);
-                dataGridViewInformation.DataSource = null;
-                dataGridViewInformation.DataSource = currentDataSource;
-            }
-            else
-            {
-                DisplayCourses();
-            }
-        }
         public void DisplayCourses()
         {
             if (!db.Database.CanConnect())
@@ -116,7 +104,7 @@ namespace Education_Project2_4team
             using (var db = new CoursesContext())
             {
                 var courses = db.Courses.ToList();
-                dataGridViewInformation.AutoGenerateColumns = false; 
+                dataGridViewInformation.AutoGenerateColumns = false;
                 dataGridViewInformation.Columns.Clear();
                 dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
                 {
@@ -237,7 +225,7 @@ namespace Education_Project2_4team
         {
             if (dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse)
             {
-                var editCourseForm = new AddCourse(selectedCourse); 
+                var editCourseForm = new AddCourse(selectedCourse);
                 editCourseForm.EventSaved += (updatedCourse) => DisplayCourses();
                 editCourseForm.ShowDialog();
             }
@@ -253,6 +241,60 @@ namespace Education_Project2_4team
             var addCourse = new AddCourse();
             addCourse.EventSaved += (Courses newCourse) => DisplayCourses();
             addCourse.ShowDialog();
+        }
+
+        private void btnOpenFavourites_Click(object sender, EventArgs e)
+        {
+            if (userId.HasValue)
+            {
+                var favouritesForm = new FavouritesForm(userId.Value);
+                favouritesForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Только пользователи могут просматривать избранное.", "Доступ запрещен",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnAddToFavourites_Click(object sender, EventArgs e)
+        {
+            if (!userId.HasValue)
+            {
+                MessageBox.Show("Только авторизованные пользователи могут добавлять в избранное.", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!(dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse))
+            {
+                MessageBox.Show("Пожалуйста, выберите курс для добавления в избранное.", "Предупреждение",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var favDb = new FavouritesContext())
+            {
+                bool alreadyExists = favDb.Favourites
+                    .Any(f => f.UserId == userId.Value && f.IDCourses == selectedCourse.IDCourses);
+
+                if (alreadyExists)
+                {
+                    MessageBox.Show("Этот курс уже добавлен в избранное.", "Информация",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    favDb.Favourites.Add(new Favourites
+                    {
+                        UserId = userId.Value,
+                        IDCourses = selectedCourse.IDCourses
+                    });
+                    favDb.SaveChanges();
+                    MessageBox.Show("Курс добавлен в избранное!", "Успех",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

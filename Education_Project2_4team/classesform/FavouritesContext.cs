@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Education_Project2_4team.classesform
+namespace Education_Project2_4team
 {
     public class FavouritesContext : DbContext
     {
