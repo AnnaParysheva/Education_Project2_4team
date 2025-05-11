@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(questionnare));
             this.labelQuestionnare = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.comboBoxLevel = new System.Windows.Forms.ComboBox();
@@ -125,7 +124,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Education_Project2_4team.Properties.Resources.e7d55c34a7b4cbcefe5b4d8f9ac20a4d;
             this.pictureBox1.Location = new System.Drawing.Point(26, 74);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(365, 392);

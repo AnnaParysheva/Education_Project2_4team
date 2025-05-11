@@ -37,7 +37,6 @@ namespace Education_Project2_4team
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCourse));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -64,7 +63,7 @@ namespace Education_Project2_4team
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Education_Project2_4team.Properties.Resources.form_icon_consent_icon_survey_amp_feedback_icon_iC0juehV;
             this.pictureBox1.Location = new System.Drawing.Point(647, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 273);
