@@ -43,10 +43,23 @@ namespace Education_Project2_4team
         {
             if (isCustomer)
             {
-
-                btnAddCourse.Enabled = false;
-                btnRedact.Enabled = false;
-                btnDeleteCourse.Enabled = false;
+                btnAddCourse.Visible = false;
+                btnRedact.Visible = false;
+                btnDeleteCourse.Visible = false;
+                btnFilter.Visible = false;
+                comboBoxFilter.Visible = false;
+                btnOpenFavourites.Visible = true;
+                btnAddToFavourites.Visible = true;
+            }
+            else
+            {
+                btnAddCourse.Visible = true;
+                btnRedact.Visible = true;
+                btnDeleteCourse.Visible = true;
+                btnFilter.Visible = true;
+                comboBoxFilter.Visible = true;
+                btnOpenFavourites.Visible = false;
+                btnAddToFavourites.Visible = false;
             }
         }
         public void DisplayRecommendedCourses(List<Courses> courses)
@@ -294,6 +307,35 @@ namespace Education_Project2_4team
                     MessageBox.Show("Курс добавлен в избранное!", "Успех",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            string selectedCategory = comboBoxFilter.SelectedItem?.ToString();
+
+            using (var db = new CoursesContext())
+            {
+                List<Courses> courses;
+
+                if (selectedCategory == "Все категории")
+                {
+                    courses = db.Courses.ToList();
+                }
+                else
+                {
+                    courses = db.Courses
+                                .Where(c => c.Category == selectedCategory)
+                                .ToList();
+
+                    if (courses.Count == 0)
+                    {
+                        MessageBox.Show("Курсы с выбранной категорией не найдены.", "Информация",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                dataGridViewInformation.DataSource = null;
+                dataGridViewInformation.DataSource = courses;
             }
         }
     }

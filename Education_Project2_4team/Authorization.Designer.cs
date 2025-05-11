@@ -177,6 +177,7 @@
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.txtBoxLogin);
             this.Controls.Add(this.label_Authorization);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Authorization";
             this.Text = "Authorization";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

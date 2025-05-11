@@ -36,16 +36,19 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.btnDeleteCourse = new System.Windows.Forms.Button();
+            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddToFavourites
             // 
+            this.btnAddToFavourites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToFavourites.AutoSize = true;
             this.btnAddToFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnAddToFavourites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToFavourites.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddToFavourites.Location = new System.Drawing.Point(708, 448);
+            this.btnAddToFavourites.Location = new System.Drawing.Point(731, 448);
             this.btnAddToFavourites.Name = "btnAddToFavourites";
             this.btnAddToFavourites.Size = new System.Drawing.Size(188, 47);
             this.btnAddToFavourites.TabIndex = 2;
@@ -55,11 +58,12 @@
             // 
             // btnOpenFavourites
             // 
+            this.btnOpenFavourites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenFavourites.AutoSize = true;
             this.btnOpenFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnOpenFavourites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenFavourites.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnOpenFavourites.Location = new System.Drawing.Point(912, 448);
+            this.btnOpenFavourites.Location = new System.Drawing.Point(937, 448);
             this.btnOpenFavourites.Name = "btnOpenFavourites";
             this.btnOpenFavourites.Size = new System.Drawing.Size(181, 47);
             this.btnOpenFavourites.TabIndex = 3;
@@ -69,6 +73,7 @@
             // 
             // btnRedact
             // 
+            this.btnRedact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRedact.AutoSize = true;
             this.btnRedact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnRedact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -83,6 +88,11 @@
             // 
             // dataGridViewInformation
             // 
+            this.dataGridViewInformation.AllowUserToAddRows = false;
+            this.dataGridViewInformation.AllowUserToDeleteRows = false;
+            this.dataGridViewInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewInformation.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -95,12 +105,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewInformation.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewInformation.GridColor = System.Drawing.SystemColors.Info;
-            this.dataGridViewInformation.Location = new System.Drawing.Point(35, 68);
+            this.dataGridViewInformation.Location = new System.Drawing.Point(35, 115);
             this.dataGridViewInformation.Name = "dataGridViewInformation";
+            this.dataGridViewInformation.ReadOnly = true;
             this.dataGridViewInformation.RowHeadersVisible = false;
             this.dataGridViewInformation.RowHeadersWidth = 51;
             this.dataGridViewInformation.RowTemplate.Height = 24;
-            this.dataGridViewInformation.Size = new System.Drawing.Size(1085, 335);
+            this.dataGridViewInformation.Size = new System.Drawing.Size(1083, 288);
             this.dataGridViewInformation.TabIndex = 0;
             // 
             // textBox1
@@ -119,6 +130,7 @@
             // 
             // btnAddCourse
             // 
+            this.btnAddCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddCourse.AutoSize = true;
             this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -133,6 +145,7 @@
             // 
             // btnDeleteCourse
             // 
+            this.btnDeleteCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeleteCourse.AutoSize = true;
             this.btnDeleteCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.btnDeleteCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,6 +158,37 @@
             this.btnDeleteCourse.UseVisualStyleBackColor = false;
             this.btnDeleteCourse.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // comboBoxFilter
+            // 
+            this.comboBoxFilter.BackColor = System.Drawing.SystemColors.Info;
+            this.comboBoxFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxFilter.FormattingEnabled = true;
+            this.comboBoxFilter.Items.AddRange(new object[] {
+            "Все категории",
+            "Технические науки",
+            "Гуманитарные науки",
+            "Естественные науки",
+            "Творчество"});
+            this.comboBoxFilter.Location = new System.Drawing.Point(185, 65);
+            this.comboBoxFilter.Name = "comboBoxFilter";
+            this.comboBoxFilter.Size = new System.Drawing.Size(148, 24);
+            this.comboBoxFilter.TabIndex = 10;
+            this.comboBoxFilter.Text = "Категория";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.SystemColors.Info;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFilter.Location = new System.Drawing.Point(35, 61);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(118, 31);
+            this.btnFilter.TabIndex = 11;
+            this.btnFilter.Text = "Фильтр";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // CoursesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,6 +197,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(193)))), ((int)(((byte)(159)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1148, 517);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.comboBoxFilter);
             this.Controls.Add(this.btnDeleteCourse);
             this.Controls.Add(this.btnAddCourse);
             this.Controls.Add(this.textBox1);
@@ -161,7 +207,7 @@
             this.Controls.Add(this.btnOpenFavourites);
             this.Controls.Add(this.btnAddToFavourites);
             this.Name = "CoursesForm";
-            this.Text = "Form1";
+            this.Text = "CoursesForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,6 +222,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAddCourse;
         private System.Windows.Forms.Button btnDeleteCourse;
+        private System.Windows.Forms.ComboBox comboBoxFilter;
+        private System.Windows.Forms.Button btnFilter;
     }
 }
 

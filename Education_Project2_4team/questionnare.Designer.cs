@@ -165,6 +165,7 @@
             this.Controls.Add(this.comboBoxLevel);
             this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.labelQuestionnare);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "questionnare";
             this.Text = "questionnare";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

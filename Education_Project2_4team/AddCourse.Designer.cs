@@ -215,6 +215,7 @@ namespace Education_Project2_4team
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AddCourse";
             this.Text = "AddCourse";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
