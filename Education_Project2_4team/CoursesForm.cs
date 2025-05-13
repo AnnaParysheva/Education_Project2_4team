@@ -46,8 +46,6 @@ namespace Education_Project2_4team
                 btnAddCourse.Visible = false;
                 btnRedact.Visible = false;
                 btnDeleteCourse.Visible = false;
-                btnFilter.Visible = false;
-                comboBoxFilter.Visible = false;
                 btnOpenFavourites.Visible = true;
                 btnAddToFavourites.Visible = true;
             }
@@ -56,8 +54,6 @@ namespace Education_Project2_4team
                 btnAddCourse.Visible = true;
                 btnRedact.Visible = true;
                 btnDeleteCourse.Visible = true;
-                btnFilter.Visible = true;
-                comboBoxFilter.Visible = true;
                 btnOpenFavourites.Visible = false;
                 btnAddToFavourites.Visible = false;
             }
@@ -139,7 +135,7 @@ namespace Education_Project2_4team
                 });
                 dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
                 {
-                    Name = "Duration",
+                    DataPropertyName = "Duration",
                     HeaderText = "Продолжительность",
                     Width = 120
                 });

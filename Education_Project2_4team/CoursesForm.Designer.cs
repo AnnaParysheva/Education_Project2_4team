@@ -101,7 +101,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewInformation.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewInformation.GridColor = System.Drawing.SystemColors.Info;
@@ -172,7 +172,7 @@
             "Творчество"});
             this.comboBoxFilter.Location = new System.Drawing.Point(185, 65);
             this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(148, 24);
+            this.comboBoxFilter.Size = new System.Drawing.Size(182, 24);
             this.comboBoxFilter.TabIndex = 10;
             this.comboBoxFilter.Text = "Категория";
             // 

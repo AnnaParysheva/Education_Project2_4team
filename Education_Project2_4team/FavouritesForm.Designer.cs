@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRemoveFromFavourites = new System.Windows.Forms.Button();
             this.dataGridViewFavouritesCourses = new System.Windows.Forms.DataGridView();
@@ -52,6 +53,13 @@
             // 
             // dataGridViewFavouritesCourses
             // 
+            this.dataGridViewFavouritesCourses.AllowUserToAddRows = false;
+            this.dataGridViewFavouritesCourses.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dataGridViewFavouritesCourses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewFavouritesCourses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -63,12 +71,13 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InfoText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewFavouritesCourses.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewFavouritesCourses.GridColor = System.Drawing.SystemColors.Info;
             this.dataGridViewFavouritesCourses.Location = new System.Drawing.Point(12, 75);
             this.dataGridViewFavouritesCourses.Name = "dataGridViewFavouritesCourses";
+            this.dataGridViewFavouritesCourses.ReadOnly = true;
             this.dataGridViewFavouritesCourses.RowHeadersVisible = false;
             this.dataGridViewFavouritesCourses.RowHeadersWidth = 51;
             this.dataGridViewFavouritesCourses.RowTemplate.Height = 24;
