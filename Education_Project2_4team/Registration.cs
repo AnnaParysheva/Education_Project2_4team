@@ -6,14 +6,23 @@ using System.Windows.Forms;
 
 namespace Education_Project2_4team
 {
+    /// <summary>
+    /// Форма регистрации нового пользователя
+    /// </summary>
     public partial class Registration : Form
     {
+        /// <summary>
+        /// Событие, вызываемое после успешной регистрации
+        /// </summary>
         public event Action<Users> UserSaved;
+        /// <summary>
+        /// Конструктор формы регистрации
+        /// </summary>
         public Registration()
         {
             InitializeComponent();
         }
-        private string HashPassword(string password)
+        public static string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
             {
@@ -25,15 +34,10 @@ namespace Education_Project2_4team
         {
             return Regex.IsMatch(input, @"^[a-zA-Z]+$");
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void CheckBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtBoxPassword.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '•';
         }
-
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             var name = txtBoxName.Text.Trim();
@@ -91,7 +95,6 @@ namespace Education_Project2_4team
                 MessageBox.Show($"Ошибка: {ex.Message}");
             }
         }
-
         private void checkBoxRepeatPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtBoxPassRepeat.PasswordChar = checkBoxRepeatPassword.Checked ? '\0' : '•';

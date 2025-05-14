@@ -14,9 +14,12 @@ namespace Education_Project2_4team
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Users>()
-                .ToTable("Users")
-                .HasKey(u => u.Id);
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.ToTable("Users");
+                entity.HasKey(u => u.Id);
+                entity.Property(u => u.Id).HasColumnType("TEXT"); 
+            });
         }
     }
 }

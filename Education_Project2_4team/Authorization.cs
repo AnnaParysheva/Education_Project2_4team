@@ -22,11 +22,12 @@ namespace Education_Project2_4team
                 MessageBox.Show("Введите логин и пароль");
                 return;
             }
+            var hashedPassword = Registration.HashPassword(password);
             try
             {
                 using (var db = new UsersContext())
                 {
-                    var user = db.Users.FirstOrDefault(u => u.Login == login && u.Password == password);
+                    var user = db.Users.FirstOrDefault(u => u.Login == login && u.Password == hashedPassword);
                     if (user != null)
                     {
                         CurrentUser = user;
@@ -47,27 +48,6 @@ namespace Education_Project2_4team
                 MessageBox.Show($"Ошибка авторизации: {ex.Message}");
             }
         }
-
-        private void txtBoxLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_register_Click(object sender, EventArgs e)
         {
             var registrationForm = new Registration();
@@ -83,11 +63,13 @@ namespace Education_Project2_4team
                 MessageBox.Show("Введите логин и пароль");
                 return;
             }
+            var hashedPassword = Registration.HashPassword(password);
             try
             {
                 using (var db = new UsersContext())
                 {
-                    if (login == "admin" && password == "admin")
+                    var admin = db.Users.FirstOrDefault(u => u.Login == "admin" && u.Password == hashedPassword);
+                    if (admin!=null)
                     {
                         var questionnaireForm = new CoursesForm(false);
                         this.Hide();

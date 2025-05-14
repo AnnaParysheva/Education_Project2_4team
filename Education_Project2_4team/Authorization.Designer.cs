@@ -62,7 +62,6 @@
             this.txtBoxLogin.Name = "txtBoxLogin";
             this.txtBoxLogin.Size = new System.Drawing.Size(308, 36);
             this.txtBoxLogin.TabIndex = 1;
-            this.txtBoxLogin.TextChanged += new System.EventHandler(this.txtBoxLogin_TextChanged);
             // 
             // txtBoxPassword
             // 
@@ -124,7 +123,6 @@
             this.textBox1.Size = new System.Drawing.Size(128, 27);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "Введите логин:";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -147,7 +145,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // checkBoxShowPassword
             // 

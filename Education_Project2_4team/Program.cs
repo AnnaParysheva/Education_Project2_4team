@@ -22,12 +22,13 @@ namespace Education_Project2_4team
         {
             using (var db = new UsersContext())
             {
+                db.Database.EnsureCreated();
                 var admin = new Users
                 {
                     Name = "Admin",
                     Surname = "System",
                     Login = "admin",
-                    Password = "admin"
+                    Password = Registration.HashPassword("admin")
                 };
                 db.Users.Add(admin);
                 db.SaveChanges();

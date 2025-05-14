@@ -4,15 +4,30 @@ using System.Windows.Forms;
 
 namespace Education_Project2_4team
 {
+    /// <summary>
+    /// Форма для добавления или редактирования курса
+    /// </summary>
     public partial class AddCourse : Form
     {
+        /// <summary>
+        /// Курс, который редактируется
+        /// </summary>
         private readonly Courses editingCourse;
-
+        /// <summary>
+        /// Событие, возникающее при успешном сохранении курса
+        /// </summary>
         public event Action<Courses> EventSaved;
+        /// <summary>
+        /// Конструктор для создания нового курса
+        /// </summary>
         public AddCourse()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Конструктор для редактирования существующего курса
+        /// </summary>
+        /// <param name="courseToEdit"></param>
         public AddCourse(Courses courseToEdit) : this()
         {
             if (courseToEdit != null)
@@ -21,6 +36,10 @@ namespace Education_Project2_4team
                 FillFormForEdit(courseToEdit);
             }
         }
+        /// <summary>
+        /// Заполняет форму данными редактируемого курса
+        /// </summary>
+        /// <param name="course"></param>
         private void FillFormForEdit(Courses course)
         {
             txtTitle.Text = course.Title;
@@ -30,26 +49,22 @@ namespace Education_Project2_4team
             comboBoxLevelOfPreparation.SelectedItem = course.LevelOfPreparation;
             comboBoxEducationForm.SelectedItem = course.EducationalForm;
         }
+        /// <summary>
+        /// Обработчик нажатия кнопки "Сохранить"
+        /// </summary>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidateForm()) return;
-
+            if (!ValidateForm())
+            {
+                return;
+            }
             try
             {
                 using (var db = new CoursesContext())
                 {
                     if (editingCourse == null)
                     {
-                        var newCourse = new Courses
-                        {
-                            Title = txtTitle.Text,
-                            Duration = comboBoxDuration.SelectedItem.ToString(),
-                            Category = comboBoxCategory.SelectedItem.ToString(),
-                            Description = txtDescription.Text,
-                            LevelOfPreparation = comboBoxLevelOfPreparation.SelectedItem.ToString(),
-                            EducationalForm = comboBoxEducationForm.SelectedItem.ToString()
-                        };
-
+                        var newCourse = CreateCourseFromForm();
                         db.Courses.Add(newCourse);
                         db.SaveChanges();
                         EventSaved?.Invoke(newCourse);
@@ -60,12 +75,7 @@ namespace Education_Project2_4team
                         var course = db.Courses.FirstOrDefault(c => c.IDCourses == editingCourse.IDCourses);
                         if (course != null)
                         {
-                            course.Title = txtTitle.Text;
-                            course.Duration = comboBoxDuration.SelectedItem.ToString();
-                            course.Category = comboBoxCategory.SelectedItem.ToString();
-                            course.Description = txtDescription.Text;
-                            course.LevelOfPreparation = comboBoxLevelOfPreparation.SelectedItem.ToString();
-                            course.EducationalForm = comboBoxEducationForm.SelectedItem.ToString();
+                            UpdateCourseFromForm(course);
                             db.SaveChanges();
                             EventSaved?.Invoke(course);
                             MessageBox.Show("Курс успешно обновлён!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,6 +93,38 @@ namespace Education_Project2_4team
                 MessageBox.Show($"Ошибка при сохранении курса: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        /// <summary>
+        /// Создаёт объект курса на основе данных формы
+        /// </summary>
+        private Courses CreateCourseFromForm()
+        {
+            return new Courses
+            {
+                Title = txtTitle.Text,
+                Duration = comboBoxDuration.SelectedItem.ToString(),
+                Category = comboBoxCategory.SelectedItem.ToString(),
+                Description = txtDescription.Text,
+                LevelOfPreparation = comboBoxLevelOfPreparation.SelectedItem.ToString(),
+                EducationalForm = comboBoxEducationForm.SelectedItem.ToString()
+            };
+        }
+        /// <summary>
+        /// Обновляет переданный курс значениями из формы
+        /// </summary>
+        /// <param name="course">Курс для обновления</param>
+        private void UpdateCourseFromForm(Courses course)
+        {
+            course.Title = txtTitle.Text;
+            course.Duration = comboBoxDuration.SelectedItem.ToString();
+            course.Category = comboBoxCategory.SelectedItem.ToString();
+            course.Description = txtDescription.Text;
+            course.LevelOfPreparation = comboBoxLevelOfPreparation.SelectedItem.ToString();
+            course.EducationalForm = comboBoxEducationForm.SelectedItem.ToString();
+        }
+        /// <summary>
+        /// Проверяет корректность заполнения формы
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateForm()
         {
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
@@ -98,27 +140,31 @@ namespace Education_Project2_4team
                               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
             if (comboBoxCategory.SelectedItem == null)
             {
                 MessageBox.Show("Выберете категорию",
                               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
                 MessageBox.Show("Введите описание курса",
                               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
             if (comboBoxLevelOfPreparation.SelectedItem == null)
             {
                 MessageBox.Show("Выберете уровень подготовки",
                               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
             if (comboBoxEducationForm.SelectedItem == null)
             {
-                MessageBox.Show("Выберете продолжительность курса",
+                MessageBox.Show("Выберете форму обучения",
                               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }

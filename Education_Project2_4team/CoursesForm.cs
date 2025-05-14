@@ -6,13 +6,31 @@ using System.Windows.Forms;
 
 namespace Education_Project2_4team
 {
+    /// <summary>
+    /// Форма отображения и управления курсами
+    /// </summary>
     public partial class CoursesForm : Form
     {
-        private int? userId;
+        /// <summary>
+        /// идентификатор текущего пользователя
+        /// </summary>
+        private readonly Guid? userId;
+        /// <summary>
+        /// Флаг, определяющий роль пользователя в системе
+        /// </summary>
         private readonly bool isCustomer;
-        private CoursesContext db;
-        private List<Courses> recommendedCourses;
-        public CoursesForm(bool isCustomer, List<Courses> recommendedCourses = null, int? userId = null)
+        /// <summary>
+        /// Контекст базы данных для работы с курсами
+        /// </summary>
+        private readonly CoursesContext db;
+        /// <summary>
+        /// Список рекомендованных курсов для текущего пользователя
+        /// </summary>
+        private readonly List<Courses> recommendedCourses;
+        /// <summary>
+        /// Конструктор формы курсов
+        /// </summary>
+        public CoursesForm(bool isCustomer, List<Courses> recommendedCourses = null, Guid? userId = null)
         {
             InitializeComponent();
             this.isCustomer = isCustomer;
@@ -22,224 +40,102 @@ namespace Education_Project2_4team
             InitializeDatabase();
             SetUpForm();
         }
-
         private void InitializeDatabase()
         {
             db.Database.EnsureCreated();
             if (recommendedCourses != null)
-                DisplayRecommendedCourses(recommendedCourses);
+            {
+                DisplayCourses(recommendedCourses);
+            }
             else
-                DisplayCourses();
+            {
+                DisplayCourses(db.Courses.ToList());
+            }
         }
+
         private void SetUpForm()
         {
-            if (isCustomer)
-            {
-                btnAddCourse.Visible = false;
-                btnRedact.Visible = false;
-                btnDeleteCourse.Visible = false;
-                btnOpenFavourites.Visible = true;
-                btnAddToFavourites.Visible = true;
-            }
-            else
-            {
-                btnAddCourse.Visible = true;
-                btnRedact.Visible = true;
-                btnDeleteCourse.Visible = true;
-                btnOpenFavourites.Visible = false;
-                btnAddToFavourites.Visible = false;
-            }
+            btnAddCourse.Visible = !isCustomer;
+            btnRedact.Visible = !isCustomer;
+            btnDeleteCourse.Visible = !isCustomer;
+            btnOpenFavourites.Visible = isCustomer;
+            btnAddToFavourites.Visible = isCustomer;
         }
-        public void DisplayRecommendedCourses(List<Courses> courses)
+        /// <summary>
+        /// Отображает список курсов в таблице
+        /// </summary>
+        public void DisplayCourses(List<Courses> courses)
         {
+            if (courses == null)
+            {
+                return;
+            }
             dataGridViewInformation.AutoGenerateColumns = false;
             dataGridViewInformation.Columns.Clear();
-            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Title",
-                HeaderText = "Название курса",
-                Width = 200
-            });
-            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Description",
-                HeaderText = "Описание",
-                Width = 150
-            });
-            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Category",
-                HeaderText = "Категория",
-                Width = 150
-            });
-            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Duration",
-                HeaderText = "Продолжительность",
-                Width = 120
-            });
-            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "EducationalForm",
-                HeaderText = "Форма обучения",
-                Width = 120
-            });
-            dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "LevelOfPreparation",
-                HeaderText = "Уровень подготовки",
-                Width = 150
-            });
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Title", "Название курса", 200));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Description", "Описание", 150));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Category", "Категория", 150));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Duration", "Продолжительность", 120));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("EducationalForm", "Форма обучения", 120));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("LevelOfPreparation", "Уровень подготовки", 150));
             dataGridViewInformation.DataSource = courses;
             dataGridViewInformation.RowHeadersVisible = false;
         }
-        public void DisplayCourses()
+        private DataGridViewTextBoxColumn CreateTextColumn(string property, string header, int width)
         {
-            if (!db.Database.CanConnect())
+            return new DataGridViewTextBoxColumn
             {
-                MessageBox.Show("Нет подключения к базе данных", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            using (var db = new CoursesContext())
-            {
-                var courses = db.Courses.ToList();
-                dataGridViewInformation.AutoGenerateColumns = false;
-                dataGridViewInformation.Columns.Clear();
-                dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-                {
-                    DataPropertyName = "Title",
-                    HeaderText = "Название курса",
-                    Width = 200
-                });
-                dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-                {
-                    DataPropertyName = "Description",
-                    HeaderText = "Описание",
-                    Width = 150
-                });
-                dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-                {
-                    DataPropertyName = "Category",
-                    HeaderText = "Категория",
-                    Width = 150
-                });
-                dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-                {
-                    DataPropertyName = "Duration",
-                    HeaderText = "Продолжительность",
-                    Width = 120
-                });
-                dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-                {
-                    DataPropertyName = "EducationalForm",
-                    HeaderText = "Форма обучения",
-                    Width = 120
-                });
-
-                dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
-                {
-                    DataPropertyName = "LevelOfPreparation",
-                    HeaderText = "Уровень подготовки",
-                    Width = 150
-                });
-                dataGridViewInformation.DataSource = courses;
-                dataGridViewInformation.RowHeadersVisible = false;
-            }
+                DataPropertyName = property,
+                HeaderText = header,
+                Width = width
+            };
         }
-
-        public void DisplayCourseDetails(int IDCourse)
-        {
-            using (var db = new CoursesContext())
-            {
-                var courseDetails = db.Courses
-                                   .FirstOrDefault(e => e.IDCourses == IDCourse);
-                if (courseDetails != null)
-                {
-                    var table = new DataTable();
-
-                    table.Columns.Add("Название", typeof(string));
-                    table.Columns.Add("Продолжительность", typeof(string));
-                    table.Columns.Add("Категория", typeof(string));
-                    table.Columns.Add("Описание", typeof(string));
-                    table.Columns.Add("Уровень подготовки", typeof(string));
-                    table.Columns.Add("Форма обучения", typeof(string));
-                    var row = table.NewRow();
-                    row["Название"] = courseDetails.Title;
-                    row["Продолжительность"] = courseDetails.Duration;
-                    row["Категория"] = courseDetails.Category;
-                    row["Описание"] = courseDetails.Description;
-                    row["Уровень подготовки"] = courseDetails.LevelOfPreparation;
-                    row["Форма обучения"] = courseDetails.EducationalForm;
-                    table.Rows.Add(row);
-                    dataGridViewInformation.DataSource = table;
-                    dataGridViewInformation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dataGridViewInformation.RowHeadersVisible = false;
-                    dataGridViewInformation.Columns["Описание"].DefaultCellStyle.WrapMode =
-                DataGridViewTriState.True;
-                    dataGridViewInformation.AutoSizeRowsMode =
-                        DataGridViewAutoSizeRowsMode.AllCells;
-                }
-                else
-                {
-                    dataGridViewInformation.DataSource = null;
-                }
-            }
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (!(dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse))
             {
                 MessageBox.Show("Пожалуйста, выберите курс для удаления.", "Предупреждение",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             var result = MessageBox.Show($"Вы уверены, что хотите удалить курс \"{selectedCourse.Title}\"?",
-                                         "Подтверждение удаления",
-                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                using (var db = new CoursesContext())
+                var courseToDelete = db.Courses.Find(selectedCourse.IDCourses);
+                if (courseToDelete != null)
                 {
-                    var courseToDelete = db.Courses.Find(selectedCourse.IDCourses);
-                    if (courseToDelete != null)
-                    {
-                        db.Courses.Remove(courseToDelete);
-                        db.SaveChanges();
-                        MessageBox.Show("Курс удалён.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DisplayCourses();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Курс не найден в базе данных.", "Ошибка",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    db.Courses.Remove(courseToDelete);
+                    db.SaveChanges();
+                    MessageBox.Show("Курс удалён.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayCourses(db.Courses.ToList());
+                }
+                else
+                {
+                    MessageBox.Show("Курс не найден в базе данных.", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
         private void btnRedact_Click(object sender, EventArgs e)
         {
             if (dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse)
             {
                 var editCourseForm = new AddCourse(selectedCourse);
-                editCourseForm.EventSaved += (updatedCourse) => DisplayCourses();
+                editCourseForm.EventSaved += (Courses newCourse) => DisplayCourses(db.Courses.ToList());
                 editCourseForm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Пожалуйста, выберите курс для редактирования.", "Предупреждение",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var addCourse = new AddCourse();
-            addCourse.EventSaved += (Courses newCourse) => DisplayCourses();
+            addCourse.EventSaved += (Courses newCourse) => DisplayCourses(db.Courses.ToList());
             addCourse.ShowDialog();
         }
 
@@ -253,7 +149,7 @@ namespace Education_Project2_4team
             else
             {
                 MessageBox.Show("Только пользователи могут просматривать избранное.", "Доступ запрещен",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -262,26 +158,26 @@ namespace Education_Project2_4team
             if (!userId.HasValue)
             {
                 MessageBox.Show("Только авторизованные пользователи могут добавлять в избранное.", "Ошибка",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!(dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse))
             {
                 MessageBox.Show("Пожалуйста, выберите курс для добавления в избранное.", "Предупреждение",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             using (var favDb = new FavouritesContext())
             {
-                bool alreadyExists = favDb.Favourites
+                var alreadyExists = favDb.Favourites
                     .Any(f => f.UserId == userId.Value && f.IDCourses == selectedCourse.IDCourses);
 
                 if (alreadyExists)
                 {
                     MessageBox.Show("Этот курс уже добавлен в избранное.", "Информация",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -292,38 +188,31 @@ namespace Education_Project2_4team
                     });
                     favDb.SaveChanges();
                     MessageBox.Show("Курс добавлен в избранное!", "Успех",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            string selectedCategory = comboBoxFilter.SelectedItem?.ToString();
-
-            using (var db = new CoursesContext())
+            var selectedCategory = comboBoxFilter.SelectedItem?.ToString();
+            List<Courses> courses;
+            if (selectedCategory == "Все категории")
             {
-                List<Courses> courses;
-
-                if (selectedCategory == "Все категории")
-                {
-                    courses = db.Courses.ToList();
-                }
-                else
-                {
-                    courses = db.Courses
-                                .Where(c => c.Category == selectedCategory)
-                                .ToList();
-
-                    if (courses.Count == 0)
-                    {
-                        MessageBox.Show("Курсы с выбранной категорией не найдены.", "Информация",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                dataGridViewInformation.DataSource = null;
-                dataGridViewInformation.DataSource = courses;
+                courses = db.Courses.ToList();
             }
+            else
+            {
+                courses = db.Courses.Where(c => c.Category == selectedCategory).ToList();
+            }
+
+            if (!courses.Any())
+            {
+                MessageBox.Show("Курсы с выбранной категорией не найдены.", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            DisplayCourses(courses);
         }
     }
 }
