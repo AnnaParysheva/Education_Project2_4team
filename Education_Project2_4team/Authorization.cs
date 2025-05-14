@@ -115,7 +115,6 @@ namespace Education_Project2_4team
             }
             
         }
-
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtBoxPassword.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '•';

@@ -33,7 +33,6 @@ namespace Education_Project2_4team
         private void InitializeDatabase()
         {
             db.Database.EnsureCreated();
-
             if (recommendedCourses != null)
                 DisplayRecommendedCourses(recommendedCourses);
             else
@@ -62,7 +61,6 @@ namespace Education_Project2_4team
         {
             dataGridViewInformation.AutoGenerateColumns = false;
             dataGridViewInformation.Columns.Clear();
-
             dataGridViewInformation.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Title",

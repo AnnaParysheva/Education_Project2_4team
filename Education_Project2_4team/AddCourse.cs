@@ -72,7 +72,6 @@ namespace Education_Project2_4team
                             course.Description = txtDescription.Text;
                             course.LevelOfPreparation = comboBoxLevelOfPreparation.SelectedItem.ToString();
                             course.EducationalForm = comboBoxEducationForm.SelectedItem.ToString();
-
                             db.SaveChanges();
                             EventSaved?.Invoke(course);
                             MessageBox.Show("Курс успешно обновлён!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,7 +82,6 @@ namespace Education_Project2_4team
                         }
                     }
                 }
-
                 this.Close();
             }
             catch (Exception ex)

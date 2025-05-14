@@ -27,7 +27,7 @@ namespace Education_Project2_4team
                 var form = new CoursesForm(true, recommendedCourses,userId);
                 this.Hide();
                 form.ShowDialog();
-                this.Close();
+                this.Show();
             }
             else
             {
@@ -63,7 +63,7 @@ namespace Education_Project2_4team
                 double currentDurationWeight = 0.2;
 
                 // для избранного
-                double favoriteCategoryWeight = 0.3;
+                double favoriteCategoryWeight = 0.6;
                 double favoriteLevelWeight = 0.05;
                 double favoriteFormWeight = 0.05;
                 double favoriteDurationWeight = 0.05;
