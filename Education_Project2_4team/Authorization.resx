@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AuthorizationError" xml:space="preserve">
+    <value>Ошибка авторизации: {0}</value>
+  </data>
+  <data name="ButtonAdminText" xml:space="preserve">
+    <value>Войти как администратор</value>
+  </data>
+  <data name="ButtonEnterText" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="ButtonRegisterText" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="CheckBoxShowPasswordText" xml:space="preserve">
+    <value>Показать пароль</value>
+  </data>
+  <data name="FormTitleAuthorization" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="LabelAuthorizationText" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Неверный логин или пароль</value>
+  </data>
+  <data name="LoginLabelText" xml:space="preserve">
+    <value>Введите логин:</value>
+  </data>
+  <data name="LoginPrompt" xml:space="preserve">
+    <value>Введите логин и пароль</value>
+  </data>
+  <data name="PasswordLabelText" xml:space="preserve">
+    <value>Введите пароль:</value>
+  </data>
 </root>

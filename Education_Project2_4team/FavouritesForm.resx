@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnRemoveFromFavourites.Text" xml:space="preserve">
+    <value>Удалить из избранного</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="Message_CourseRemoved" xml:space="preserve">
+    <value>"Курс '{0}' удален из избранного."</value>
+  </data>
+  <data name="Message_FavouriteNotFound" xml:space="preserve">
+    <value>"Не удалось найти запись в избранном."</value>
+  </data>
+  <data name="Title_Error" xml:space="preserve">
+    <value>"Ошибка"</value>
+  </data>
+  <data name="Title_Success" xml:space="preserve">
+    <value>"Успешно"</value>
+  </data>
+  <data name="Title_Warning" xml:space="preserve">
+    <value>"Предупреждение"</value>
+  </data>
+  <data name="Warning_SelectCourseForRemoval" xml:space="preserve">
+    <value>"Выберите курс для удаления из избранного."</value>
+  </data>
 </root>

@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddCourse_CategoryRequired" xml:space="preserve">
+    <value>"Выберете категорию"</value>
+  </data>
+  <data name="AddCourse_CourseNotFound" xml:space="preserve">
+    <value> "Курс не найден."</value>
+  </data>
+  <data name="AddCourse_DescriptionRequired" xml:space="preserve">
+    <value> "Введите описание курса"</value>
+  </data>
+  <data name="AddCourse_DurationRequired" xml:space="preserve">
+    <value>"Выберете продолжительность курса"</value>
+  </data>
+  <data name="AddCourse_EduFormRequired" xml:space="preserve">
+    <value>"Выберете форму обучения"</value>
+  </data>
+  <data name="AddCourse_LevelRequired" xml:space="preserve">
+    <value>"Выберете уровень подготовки"</value>
+  </data>
+  <data name="AddCourse_SaveError" xml:space="preserve">
+    <value>"Ошибка при сохранении курса: {0}"</value>
+  </data>
+  <data name="AddCourse_SaveSuccess_Add" xml:space="preserve">
+    <value> "Курс успешно добавлен!"</value>
+  </data>
+  <data name="AddCourse_SaveSuccess_Update" xml:space="preserve">
+    <value>"Курс успешно обновлён!"</value>
+  </data>
+  <data name="AddCourse_TitleRequired" xml:space="preserve">
+    <value>"Введите название курса"</value>
+  </data>
+  <data name="ButtonSaveText" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="ComboBoxCategoryItems" xml:space="preserve">
+    <value>Технические науки;Гуманитарные науки;Естественные науки;Творчество</value>
+  </data>
+  <data name="ComboBoxCategoryPrompt" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="ComboBoxDurationItems" xml:space="preserve">
+    <value>1 месяц;3 месяца;6 месяцев;1 год</value>
+  </data>
+  <data name="ComboBoxDurationPrompt" xml:space="preserve">
+    <value>Продолжительность курса</value>
+  </data>
+  <data name="ComboBoxFormItems" xml:space="preserve">
+    <value>Очная;Онлайн;Смешанная</value>
+  </data>
+  <data name="ComboBoxFormPrompt" xml:space="preserve">
+    <value>Форма обучения</value>
+  </data>
+  <data name="ComboBoxLevelItems" xml:space="preserve">
+    <value>Начальный;Средний;Продвинутый</value>
+  </data>
+  <data name="ComboBoxLevelPrompt" xml:space="preserve">
+    <value>Уровень подготовки</value>
+  </data>
+  <data name="FormTitleAddCourse" xml:space="preserve">
+    <value> Добавить курс</value>
+  </data>
+  <data name="LabelDescription" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="LabelMainHeader" xml:space="preserve">
+    <value>Информация о курсе</value>
+  </data>
+  <data name="LabelTitle" xml:space="preserve">
+    <value>Название:</value>
+  </data>
 </root>

@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonAddCourseText" xml:space="preserve">
+    <value>Добавить курс</value>
+  </data>
+  <data name="ButtonAddToFavouritesText" xml:space="preserve">
+    <value>Добавить в избранное</value>
+  </data>
+  <data name="ButtonDeleteCourseText" xml:space="preserve">
+    <value>Удалить курс</value>
+  </data>
+  <data name="ButtonFilterText" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="ButtonOpenFavouritesText" xml:space="preserve">
+    <value>Перейти в избранное</value>
+  </data>
+  <data name="ButtonRedactText" xml:space="preserve">
+    <value>Редактировать курс</value>
+  </data>
+  <data name="ComboBoxFilterItems" xml:space="preserve">
+    <value>Все категории;Технические науки;Гуманитарные науки;Естественные науки;Творчество</value>
+  </data>
+  <data name="ComboBoxFilterPrompt" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="Error_OnlyForAuthorized_AddToFavourites" xml:space="preserve">
+    <value>"Только авторизованные пользователи могут добавлять в избранное."</value>
+  </data>
+  <data name="Form_Title" xml:space="preserve">
+    <value>Подбор курсов</value>
+  </data>
+  <data name="Info_NoCoursesWithCategory" xml:space="preserve">
+    <value> "Курсы с выбранной категорией не найдены."</value>
+  </data>
+  <data name="Message_AlreadyInFavourites" xml:space="preserve">
+    <value>"Этот курс уже добавлен в избранное."</value>
+  </data>
+  <data name="Message_ConfirmDeletion" xml:space="preserve">
+    <value>"Вы уверены, что хотите удалить курс "{0}"?"</value>
+  </data>
+  <data name="Message_CourseAddedToFavourites" xml:space="preserve">
+    <value> "Курс добавлен в избранное!"</value>
+  </data>
+  <data name="Message_CourseDeleted" xml:space="preserve">
+    <value>"Курс удалён."</value>
+  </data>
+  <data name="Message_CourseNotFound" xml:space="preserve">
+    <value>"Курс не найден в базе данных."</value>
+  </data>
+  <data name="TextBoxTitleText" xml:space="preserve">
+    <value>Подбор курсов</value>
+  </data>
+  <data name="Title_ConfirmationDeletion" xml:space="preserve">
+    <value>"Подтверждение удаления"</value>
+  </data>
+  <data name="Title_Success" xml:space="preserve">
+    <value> "Успешно"</value>
+  </data>
+  <data name="Warning_OnlyForUsers_ViewFavourites" xml:space="preserve">
+    <value>"Только пользователи могут просматривать избранное."</value>
+  </data>
+  <data name="Warning_SelectCourseForDeletion" xml:space="preserve">
+    <value> "Пожалуйста, выберите курс для удаления."</value>
+  </data>
+  <data name="Warning_SelectCourseForEditing" xml:space="preserve">
+    <value>"Пожалуйста, выберите курс для редактирования."</value>
+  </data>
+  <data name="Warning_SelectCourseForFavourites" xml:space="preserve">
+    <value>"Пожалуйста, выберите курс для добавления в избранное."</value>
+  </data>
 </root>
