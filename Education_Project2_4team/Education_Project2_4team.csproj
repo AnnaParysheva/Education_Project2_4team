@@ -177,6 +177,11 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Authorization1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Authorization.resx</DependentUpon>
+    </Compile>
     <Compile Include="classesform\Courses.cs" />
     <Compile Include="classesform\CoursesContext.cs" />
     <Compile Include="classesform\Favourites.cs" />
@@ -231,6 +236,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Authorization1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CoursesForm.resx">
       <DependentUpon>CoursesForm.cs</DependentUpon>

@@ -19,7 +19,6 @@ namespace Education_Project2_4team
             Batteries.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authorization());
             // Регистрация обработчиков необработанных исключений
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             Application.ThreadException += Application_ThreadException;

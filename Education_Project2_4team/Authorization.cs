@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Education_Project2_4team.Properties;
 using NLog;
 
 namespace Education_Project2_4team
@@ -21,6 +22,14 @@ namespace Education_Project2_4team
         public Authorization()
         {
             InitializeComponent();
+            this.Text = AuthorizationResource.FormTitleAuthorization;
+            label_Authorization.Text = AuthorizationResource.LabelAuthorizationText;
+            textBox1.Text = AuthorizationResource.LoginLabelText;
+            textBox2.Text = AuthorizationResource.PasswordLabelText;
+            btnEnter.Text = AuthorizationResource.ButtonEnterText;
+            btnLogInAsAnAdministrtion.Text = AuthorizationResource.ButtonAdminText;
+            btn_register.Text = AuthorizationResource.ButtonRegisterText;
+            checkBoxShowPassword.Text = AuthorizationResource.CheckBoxShowPasswordText;
             Logger.Info("Форма авторизации инициализирована");
         }
 
@@ -32,7 +41,7 @@ namespace Education_Project2_4team
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
             {
                 Logger.Warn("Введен пустой логин или пароль");
-                MessageBox.Show("Введите логин и пароль");
+                MessageBox.Show(AuthorizationResource.LoginPrompt, AuthorizationResource.LabelAuthorizationText);
                 return;
             }
             var hashedPassword = Registration.HashPassword(password);
@@ -54,14 +63,15 @@ namespace Education_Project2_4team
                     else
                     {
                         Logger.Warn($"Неудачная попытка входа для пользователя {login}");
-                        MessageBox.Show("Неверный логин или пароль");
+                        MessageBox.Show(AuthorizationResource.LoginFailed, AuthorizationResource.LabelAuthorizationText);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Logger.Error(ex, $"Ошибка авторизации для пользователя {login}");
-                MessageBox.Show($"Ошибка авторизации: {ex.Message}");
+                MessageBox.Show(string.Format(AuthorizationResource.AuthorizationError, ex.Message),
+                              AuthorizationResource.LabelAuthorizationText);
             }
         }
         private void btn_register_Click(object sender, EventArgs e)
@@ -79,7 +89,7 @@ namespace Education_Project2_4team
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
             {
                 Logger.Warn("Введен пустой логин или пароль для администратора");
-                MessageBox.Show("Введите логин и пароль");
+                MessageBox.Show(AuthorizationResource.LoginPrompt, AuthorizationResource.LabelAuthorizationText);
                 return;
             }
             var hashedPassword = Registration.HashPassword(password);
@@ -99,14 +109,15 @@ namespace Education_Project2_4team
                     else
                     {
                         Logger.Warn($"Неудачная попытка входа администратора (логин: {login})");
-                        MessageBox.Show("Неверный логин или пароль");
+                        MessageBox.Show(AuthorizationResource.LoginFailed, AuthorizationResource.LabelAuthorizationText);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Logger.Error(ex, "Ошибка авторизации администратора");
-                MessageBox.Show($"Ошибка авторизации: {ex.Message}");
+                MessageBox.Show(string.Format(AuthorizationResource.AuthorizationError, ex.Message),
+                              AuthorizationResource.LabelAuthorizationText);
             }
             
         }
