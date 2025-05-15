@@ -3,8 +3,14 @@
 
 namespace Education_Project2_4team
 {
+    /// <summary>
+    /// Контекст базы данных для работы с пользователями
+    /// </summary>
     public class UsersContext : DbContext
     {
+        /// <summary>
+        /// Таблица пользователей системы
+        /// </summary>
         public DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -18,7 +24,7 @@ namespace Education_Project2_4team
             {
                 entity.ToTable("Users");
                 entity.HasKey(u => u.Id);
-                entity.Property(u => u.Id).HasColumnType("TEXT"); 
+                entity.Property(u => u.Id).HasColumnType("TEXT");
             });
         }
     }
