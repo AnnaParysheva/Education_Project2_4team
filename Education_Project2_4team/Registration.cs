@@ -21,6 +21,16 @@ namespace Education_Project2_4team
         public Registration()
         {
             InitializeComponent();
+            this.Text = RegistrationResource.RegistrationTitle;
+            label1.Text = RegistrationResource.RegistrationTitle;
+            label2.Text = RegistrationResource.LabelLogin;
+            label3.Text = RegistrationResource.LabelPassword;
+            label4.Text = RegistrationResource.LabelRepeatPassword;
+            label5.Text = RegistrationResource.LabelName;
+            label6.Text = RegistrationResource.LabelSurname;
+            btnRegistration.Text = RegistrationResource.ButtonRegister;
+            checkBoxShowPassword.Text = RegistrationResource.CheckBoxShowPassword;
+            checkBoxRepeatPassword.Text = RegistrationResource.CheckBoxShowRepeatPassword;
         }
         public static string HashPassword(string password)
         {
@@ -45,29 +55,46 @@ namespace Education_Project2_4team
             var login = txtBoxLogin.Text.Trim();
             var password = txtBoxPassword.Text.Trim();
             var passRepeat = txtBoxPassRepeat.Text.Trim();
-            if (name.Length == 0)
+            if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Поле 'Имя' не должно быть пустым");
+                MessageBox.Show(RegistrationResource.Error_EmptyName,
+                              RegistrationResource.RegistrationTitle);
+                return;
             }
-            if (surname.Length == 0)
+
+            if (string.IsNullOrEmpty(surname))
             {
-                MessageBox.Show("Поле 'Фамилия' не должно быть пустым");
+                MessageBox.Show(RegistrationResource.Error_EmptySurname,
+                              RegistrationResource.RegistrationTitle);
+                return;
             }
+
             if (login.Length < 4)
             {
-                MessageBox.Show("Логин должен содержать не менее 4 символов");
+                MessageBox.Show(RegistrationResource.Error_ShortLogin,
+                              RegistrationResource.RegistrationTitle);
+                return;
             }
+
             if (!IsEnglishLetters(login))
             {
-                MessageBox.Show("Логин должен содержать только английские буквы");
+                MessageBox.Show(RegistrationResource.Error_InvalidLogin,
+                              RegistrationResource.RegistrationTitle);
+                return;
             }
+
             if (password.Length < 8)
             {
-                MessageBox.Show("Пароль должен содержать не менее 8 символов");
+                MessageBox.Show(RegistrationResource.Error_ShortPassword,
+                              RegistrationResource.RegistrationTitle);
+                return;
             }
+
             if (password != passRepeat)
             {
-                MessageBox.Show("Пароли не совпадают");
+                MessageBox.Show(RegistrationResource.Error_PasswordsDoNotMatch,
+                              RegistrationResource.RegistrationTitle);
+                return;
             }
             try
             {
@@ -85,14 +112,16 @@ namespace Education_Project2_4team
                     db.Users.Add(user);
                     db.SaveChanges();
                     UserSaved?.Invoke(user);
-                    MessageBox.Show("Регистрация успешна!");
+                    MessageBox.Show(RegistrationResource.Success_Registration,
+                                  RegistrationResource.RegistrationTitle);
                     this.DialogResult = DialogResult.OK;
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка: {ex.Message}");
+                MessageBox.Show(string.Format(RegistrationResource.Error_Generic, ex.Message),
+                              RegistrationResource.RegistrationTitle);
             }
         }
         private void checkBoxRepeatPassword_CheckedChanged(object sender, EventArgs e)

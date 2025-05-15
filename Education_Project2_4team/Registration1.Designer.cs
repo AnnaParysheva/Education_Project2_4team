@@ -22,14 +22,14 @@ namespace Education_Project2_4team {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Registration {
+    internal class RegistrationResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Registration() {
+        internal RegistrationResource() {
         }
         
         /// <summary>
@@ -79,7 +79,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на CheckBoxShowRepeatPassword.
+        ///   Ищет локализованную строку, похожую на Показать пароль.
         /// </summary>
         internal static string CheckBoxShowRepeatPassword {
             get {
@@ -88,7 +88,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Поле &apos;Имя&apos; не должно быть пустым&quot;.
+        ///   Ищет локализованную строку, похожую на Поле &apos;Имя&apos; не должно быть пустым.
         /// </summary>
         internal static string Error_EmptyName {
             get {
@@ -97,7 +97,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на  &quot;Поле &apos;Фамилия&apos; не должно быть пустым&quot;.
+        ///   Ищет локализованную строку, похожую на Поле &apos;Фамилия&apos; не должно быть пустым.
         /// </summary>
         internal static string Error_EmptySurname {
             get {
@@ -106,7 +106,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Ошибка: {0}&quot;.
+        ///   Ищет локализованную строку, похожую на Ошибка: {0}.
         /// </summary>
         internal static string Error_Generic {
             get {
@@ -115,7 +115,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Логин должен содержать только английские буквы&quot;.
+        ///   Ищет локализованную строку, похожую на Логин должен содержать только английские буквы.
         /// </summary>
         internal static string Error_InvalidLogin {
             get {
@@ -124,7 +124,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Пароли не совпадают&quot;.
+        ///   Ищет локализованную строку, похожую на Пароли не совпадают.
         /// </summary>
         internal static string Error_PasswordsDoNotMatch {
             get {
@@ -133,7 +133,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на  &quot;Логин должен содержать не менее 4 символов&quot;.
+        ///   Ищет локализованную строку, похожую на Логин должен содержать не менее 4 символов.
         /// </summary>
         internal static string Error_ShortLogin {
             get {
@@ -142,7 +142,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Пароль должен содержать не менее 8 символов&quot;.
+        ///   Ищет локализованную строку, похожую на Пароль должен содержать не менее 8 символов.
         /// </summary>
         internal static string Error_ShortPassword {
             get {
@@ -187,7 +187,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Фамилия.
+        ///   Ищет локализованную строку, похожую на Фамилия:.
         /// </summary>
         internal static string LabelSurname {
             get {
@@ -205,7 +205,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Регистрация успешна!&quot;.
+        ///   Ищет локализованную строку, похожую на Регистрация успешна!.
         /// </summary>
         internal static string Success_Registration {
             get {
