@@ -166,12 +166,14 @@
     <Compile Include="AddCourse.Designer.cs">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCourseUsing.cs" />
     <Compile Include="Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="AuthorizationUsing.cs" />
     <Compile Include="classesform\Courses.cs" />
     <Compile Include="classesform\CoursesContext.cs" />
     <Compile Include="classesform\Favourites.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="CoursesForm.Designer.cs">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoursesFormUsing.cs" />
     <Compile Include="FavouritesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +207,7 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationUsing.cs" />
     <EmbeddedResource Include="AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </EmbeddedResource>

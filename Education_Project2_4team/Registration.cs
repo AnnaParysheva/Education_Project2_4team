@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -41,49 +42,34 @@ namespace Education_Project2_4team
             var login = txtBoxLogin.Text.Trim();
             var password = txtBoxPassword.Text.Trim();
             var passRepeat = txtBoxPassRepeat.Text.Trim();
-            if (name.Length == 0)
-            {
-                MessageBox.Show("Поле 'Имя' не должно быть пустым");
-            }
-            if (surname.Length == 0)
-            {
-                MessageBox.Show("Поле 'Фамилия' не должно быть пустым");
-            }
-            if (login.Length < 4)
-            {
-                MessageBox.Show("Логин должен содержать не менее 4 символов");
-            }
-            if (!IsEnglishLetters(login))
-            {
-                MessageBox.Show("Логин должен содержать только английские буквы");
-            }
-            if (password.Length < 8)
-            {
-                MessageBox.Show("Пароль должен содержать не менее 8 символов");
-            }
-            if (password != passRepeat)
-            {
-                MessageBox.Show("Пароли не совпадают");
-            }
+
             try
             {
-                using (var db = new UsersContext())
+                using (var db = new UsersContext(new DbContextOptions<UsersContext>()))
                 {
                     db.Database.EnsureCreated();
-                    var user = new Users
-                    {
-                        Name = name,
-                        Surname = surname,
-                        Login = login,
-                        Password = HashPassword(password)
-                    };
 
-                    db.Users.Add(user);
-                    db.SaveChanges();
-                    UserSaved?.Invoke(user);
-                    MessageBox.Show("Регистрация успешна!");
-                    this.DialogResult = DialogResult.OK;
-                    Close();
+                    var registration = new RegistrationUsing(db);
+                    var result = registration.Register(name, surname, login, password, passRepeat);
+
+                    if (result == "Регистрация успешна")
+                    {
+                        UserSaved?.Invoke(new Users
+                        {
+                            Name = name,
+                            Surname = surname,
+                            Login = login,
+                            Password = password
+                        });
+
+                        MessageBox.Show(result);
+                        this.DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result);
+                    }
                 }
             }
             catch (Exception ex)

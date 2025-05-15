@@ -15,9 +15,16 @@ namespace Education_Project2_4team
     {
         public DbSet<Users> Users { get; set; }
 
+        public UsersContext(DbContextOptions<UsersContext> options)
+        : base(options)
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite("Data Source=UserDatabase.db");
+            if (!options.IsConfigured)
+            {
+                options.UseSqlite("Data Source=UserDatabase.db");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

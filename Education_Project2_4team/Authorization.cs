@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Education_Project2_4team;
+using Microsoft.EntityFrameworkCore;
 
 namespace Education_Project2_4team
 {
@@ -26,22 +27,20 @@ namespace Education_Project2_4team
         {
             var login = txtBoxLogin.Text.Trim();
             var password = txtBoxPassword.Text.Trim();
-            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Введите логин и пароль");
-                return;
-            }
+
             try
             {
-                using (var db = new UsersContext())
+                using (var db = new UsersContext(new DbContextOptions<UsersContext>()))
                 {
-                    var user = db.Users.FirstOrDefault(u => u.Login == login && u.Password == password);
+                    var auth = new AuthorizationUsing(db);
+                    var user = auth.ValidateUser(login, password);
+
                     if (user != null)
                     {
                         CurrentUser = user;
                         this.DialogResult = DialogResult.OK;
                         var questionnaireForm = new questionnare(user.Id);
-                        this.Hide(); 
+                        this.Hide();
                         questionnaireForm.ShowDialog();
                         this.Close();
                     }
@@ -50,6 +49,10 @@ namespace Education_Project2_4team
                         MessageBox.Show("Неверный логин или пароль");
                     }
                 }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -87,16 +90,13 @@ namespace Education_Project2_4team
         {
             var login = txtBoxLogin.Text.Trim();
             var password = txtBoxPassword.Text.Trim();
-            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Введите логин и пароль");
-                return;
-            }
+
             try
             {
-                using (var db = new UsersContext())
+                using (var db = new UsersContext(new DbContextOptions<UsersContext>()))
                 {
-                    if (login == "admin" && password == "admin")
+                    var auth = new AuthorizationUsing(db);
+                    if (auth.IsAdmin(login, password))
                     {
                         var questionnaireForm = new CoursesForm(false);
                         this.Hide();
@@ -109,13 +109,15 @@ namespace Education_Project2_4team
                     }
                 }
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка авторизации: {ex.Message}");
             }
-            
         }
-
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtBoxPassword.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '•';

@@ -25,7 +25,7 @@ namespace Education_Project2_4team
         }
         static void EnsureAdminExists()
         {
-            using (var db = new UsersContext())
+            using (var db = new UsersContext(new DbContextOptions<UsersContext>()))
             {
                 var admin = new Users
                 {
