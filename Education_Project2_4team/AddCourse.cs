@@ -23,6 +23,19 @@ namespace Education_Project2_4team
         public AddCourse()
         {
             InitializeComponent();
+            this.Text = AddCourseResources.FormTitleAddCourse;
+            label7.Text = AddCourseResources.LabelMainHeader;
+            label1.Text = AddCourseResources.LabelTitle;
+            label10.Text = AddCourseResources.LabelDescription;
+            btnSaveNewCourse.Text = AddCourseResources.ButtonSaveText;
+            comboBoxDuration.Text = AddCourseResources.ComboBoxDurationPrompt;
+            comboBoxCategory.Text = AddCourseResources.ComboBoxCategoryPrompt;
+            comboBoxLevelOfPreparation.Text = AddCourseResources.ComboBoxLevelPrompt;
+            comboBoxEducationForm.Text = AddCourseResources.ComboBoxFormPrompt;
+            comboBoxCategory.Items.AddRange(AddCourseResources.ComboBoxCategoryItems.Split(';'));
+            comboBoxDuration.Items.AddRange(AddCourseResources.ComboBoxDurationItems.Split(';'));
+            comboBoxEducationForm.Items.AddRange(AddCourseResources.ComboBoxFormItems.Split(';'));
+            comboBoxLevelOfPreparation.Items.AddRange(AddCourseResources.ComboBoxLevelItems.Split(';'));
         }
         /// <summary>
         /// Конструктор для редактирования существующего курса
@@ -68,7 +81,12 @@ namespace Education_Project2_4team
                         db.Courses.Add(newCourse);
                         db.SaveChanges();
                         EventSaved?.Invoke(newCourse);
-                        MessageBox.Show("Курс успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(
+                            AddCourseResources.AddCourse_SaveSuccess_Add,
+                            AddCourseResources.FormTitleAddCourse,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
                     }
                     else
                     {
@@ -78,11 +96,21 @@ namespace Education_Project2_4team
                             UpdateCourseFromForm(course);
                             db.SaveChanges();
                             EventSaved?.Invoke(course);
-                            MessageBox.Show("Курс успешно обновлён!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(
+                                AddCourseResources.AddCourse_SaveSuccess_Update,
+                                AddCourseResources.FormTitleAddCourse,
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                            );
                         }
                         else
                         {
-                            MessageBox.Show("Курс не найден.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(
+                                AddCourseResources.AddCourse_CourseNotFound,
+                                AddCourseResources.FormTitleAddCourse,
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                            );
                         }
                     }
                 }
@@ -90,7 +118,12 @@ namespace Education_Project2_4team
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при сохранении курса: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    string.Format(AddCourseResources.AddCourse_SaveError, ex.Message),
+                    AddCourseResources.FormTitleAddCourse,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
         /// <summary>
@@ -129,45 +162,58 @@ namespace Education_Project2_4team
         {
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                MessageBox.Show("Введите название курса", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourseResources.AddCourse_TitleRequired,
+                              AddCourseResources.FormTitleAddCourse,
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxDuration.SelectedItem == null)
             {
-                MessageBox.Show("Выберете продолжительность курса",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourseResources.AddCourse_DurationRequired,
+                              AddCourseResources.FormTitleAddCourse,
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxCategory.SelectedItem == null)
             {
-                MessageBox.Show("Выберете категорию",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourseResources.AddCourse_CategoryRequired,
+                              AddCourseResources.FormTitleAddCourse,
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
-                MessageBox.Show("Введите описание курса",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourseResources.AddCourse_DescriptionRequired,
+                              AddCourseResources.FormTitleAddCourse,
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxLevelOfPreparation.SelectedItem == null)
             {
-                MessageBox.Show("Выберете уровень подготовки",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourseResources.AddCourse_LevelRequired,
+                              AddCourseResources.FormTitleAddCourse,
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxEducationForm.SelectedItem == null)
             {
-                MessageBox.Show("Выберете форму обучения",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourseResources.AddCourse_EduFormRequired,
+                              AddCourseResources.FormTitleAddCourse,
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return false;
             }
+
             return true;
         }
     }

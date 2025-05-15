@@ -171,6 +171,11 @@
     <Compile Include="AddCourse.Designer.cs">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCourse1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddCourse.resx</DependentUpon>
+    </Compile>
     <Compile Include="Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
