@@ -164,12 +164,6 @@
             this.comboBoxFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Items.AddRange(new object[] {
-            "Все категории",
-            "Технические науки",
-            "Гуманитарные науки",
-            "Естественные науки",
-            "Творчество"});
             this.comboBoxFilter.Location = new System.Drawing.Point(185, 65);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(182, 24);

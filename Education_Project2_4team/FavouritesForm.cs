@@ -22,6 +22,9 @@ namespace Education_Project2_4team
         {
             InitializeComponent();
             currentUserId = userId;
+            this.Text = "Избранное"; 
+            label1.Text = FavouritesForm.label1_Text;
+            btnRemoveFromFavourites.Text = FavouritesForm.btnRemoveFromFavourites_Text;
             LoadFavourites();
         }
         /// <summary>
@@ -74,8 +77,11 @@ namespace Education_Project2_4team
         {
             if (dataGridViewFavouritesCourses.CurrentRow == null)
             {
-                MessageBox.Show("Выберите курс для удаления из избранного.", "Предупреждение",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    FavouritesForm.Warning_SelectCourseForRemoval,
+                    FavouritesForm.Title_Warning,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -90,15 +96,20 @@ namespace Education_Project2_4team
                 {
                     db.Favourites.Remove(favToRemove);
                     db.SaveChanges();
-
-                    MessageBox.Show($"Курс '{courseTitle}' удален из избранного.", "Успешно",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(
+                        string.Format(FavouritesForm.Message_CourseRemoved, courseTitle),
+                        FavouritesForm.Title_Success,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                     LoadFavourites();
                 }
                 else
                 {
-                    MessageBox.Show("Не удалось найти запись в избранном.", "Ошибка",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        FavouritesForm.Message_FavouriteNotFound,
+                        FavouritesForm.Title_Error,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
         }

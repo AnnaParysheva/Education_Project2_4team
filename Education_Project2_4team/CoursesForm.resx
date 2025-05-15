@@ -133,57 +133,63 @@
     <value>Перейти в избранное</value>
   </data>
   <data name="ButtonRedactText" xml:space="preserve">
-    <value>Редактировать курс</value>
+    <value>Редактировать</value>
   </data>
   <data name="ComboBoxFilterItems" xml:space="preserve">
     <value>Все категории;Технические науки;Гуманитарные науки;Естественные науки;Творчество</value>
   </data>
   <data name="ComboBoxFilterPrompt" xml:space="preserve">
-    <value>Категория</value>
+    <value>Фильтр</value>
   </data>
   <data name="Error_OnlyForAuthorized_AddToFavourites" xml:space="preserve">
-    <value>"Только авторизованные пользователи могут добавлять в избранное."</value>
+    <value>Только авторизованные пользователи</value>
   </data>
   <data name="Form_Title" xml:space="preserve">
-    <value>Подбор курсов</value>
+    <value>Курсы</value>
   </data>
   <data name="Info_NoCoursesWithCategory" xml:space="preserve">
-    <value> "Курсы с выбранной категорией не найдены."</value>
+    <value>Курсы с выбранной категорией не найдены</value>
   </data>
   <data name="Message_AlreadyInFavourites" xml:space="preserve">
-    <value>"Этот курс уже добавлен в избранное."</value>
+    <value>Курс уже в избранном</value>
   </data>
   <data name="Message_ConfirmDeletion" xml:space="preserve">
-    <value>"Вы уверены, что хотите удалить курс "{0}"?"</value>
+    <value>Вы уверены, что хотите удалить курс {0}?</value>
   </data>
   <data name="Message_CourseAddedToFavourites" xml:space="preserve">
-    <value> "Курс добавлен в избранное!"</value>
+    <value> Курс добавлен в избранное</value>
   </data>
   <data name="Message_CourseDeleted" xml:space="preserve">
-    <value>"Курс удалён."</value>
+    <value>Курс успешно удалён</value>
   </data>
   <data name="Message_CourseNotFound" xml:space="preserve">
-    <value>"Курс не найден в базе данных."</value>
+    <value>Курс не найден</value>
   </data>
   <data name="TextBoxTitleText" xml:space="preserve">
-    <value>Подбор курсов</value>
+    <value>Список курсов</value>
   </data>
   <data name="Title_ConfirmationDeletion" xml:space="preserve">
-    <value>"Подтверждение удаления"</value>
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="Title_Error" xml:space="preserve">
+    <value>Ошибка</value>
   </data>
   <data name="Title_Success" xml:space="preserve">
-    <value> "Успешно"</value>
+    <value>Успех</value>
+  </data>
+  <data name="Title_Warning" xml:space="preserve">
+    <value>Предупреждение</value>
   </data>
   <data name="Warning_OnlyForUsers_ViewFavourites" xml:space="preserve">
-    <value>"Только пользователи могут просматривать избранное."</value>
+    <value>Только для пользователей</value>
   </data>
   <data name="Warning_SelectCourseForDeletion" xml:space="preserve">
-    <value> "Пожалуйста, выберите курс для удаления."</value>
+    <value>Выберите курс для удаление</value>
   </data>
   <data name="Warning_SelectCourseForEditing" xml:space="preserve">
-    <value>"Пожалуйста, выберите курс для редактирования."</value>
+    <value>Выберите курс для редактирования</value>
   </data>
   <data name="Warning_SelectCourseForFavourites" xml:space="preserve">
-    <value>"Пожалуйста, выберите курс для добавления в избранное."</value>
+    <value>Выберите курс для добавления в избранное</value>
   </data>
 </root>

@@ -37,6 +37,16 @@ namespace Education_Project2_4team
             this.recommendedCourses = recommendedCourses;
             this.userId = userId;
             db = new CoursesContext();
+            this.Text = CoursesForm.Form_Title;
+            textBox1.Text = CoursesForm.TextBoxTitleText;
+            btnAddCourse.Text = CoursesForm.ButtonAddCourseText;
+            btnAddToFavourites.Text = CoursesForm.ButtonAddToFavouritesText;
+            btnDeleteCourse.Text = CoursesForm.ButtonDeleteCourseText;
+            btnFilter.Text = CoursesForm.ButtonFilterText;
+            btnOpenFavourites.Text = CoursesForm.ButtonOpenFavouritesText;
+            btnRedact.Text = CoursesForm.ButtonRedactText;
+            comboBoxFilter.Items.AddRange(CoursesForm.ComboBoxFilterItems.Split(';'));
+            comboBoxFilter.Text = CoursesForm.ComboBoxFilterPrompt;
             InitializeDatabase();
             SetUpForm();
         }
@@ -94,12 +104,15 @@ namespace Education_Project2_4team
         {
             if (!(dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse))
             {
-                MessageBox.Show("Пожалуйста, выберите курс для удаления.", "Предупреждение",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(CoursesForm.Warning_SelectCourseForDeletion,
+                              CoursesForm.Title_Warning,
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var result = MessageBox.Show($"Вы уверены, что хотите удалить курс \"{selectedCourse.Title}\"?",
-                "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show(
+                string.Format(CoursesForm.Message_ConfirmDeletion, selectedCourse.Title),
+                CoursesForm.Title_ConfirmationDeletion,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 var courseToDelete = db.Courses.Find(selectedCourse.IDCourses);
@@ -107,13 +120,16 @@ namespace Education_Project2_4team
                 {
                     db.Courses.Remove(courseToDelete);
                     db.SaveChanges();
-                    MessageBox.Show("Курс удалён.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(CoursesForm.Message_CourseDeleted,
+                                    CoursesForm.Title_Success,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DisplayCourses(db.Courses.ToList());
                 }
                 else
                 {
-                    MessageBox.Show("Курс не найден в базе данных.", "Ошибка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(CoursesForm.Message_CourseNotFound,
+                                    CoursesForm.Title_Error,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -127,8 +143,9 @@ namespace Education_Project2_4team
             }
             else
             {
-                MessageBox.Show("Пожалуйста, выберите курс для редактирования.", "Предупреждение",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(CoursesForm.Warning_SelectCourseForEditing,
+                                CoursesForm.Title_Warning,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -148,8 +165,9 @@ namespace Education_Project2_4team
             }
             else
             {
-                MessageBox.Show("Только пользователи могут просматривать избранное.", "Доступ запрещен",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(CoursesForm.Warning_OnlyForUsers_ViewFavourites,
+                                CoursesForm.Title_Warning,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -157,15 +175,17 @@ namespace Education_Project2_4team
         {
             if (!userId.HasValue)
             {
-                MessageBox.Show("Только авторизованные пользователи могут добавлять в избранное.", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(CoursesForm.Error_OnlyForAuthorized_AddToFavourites,
+                                CoursesForm.Title_Error,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!(dataGridViewInformation.CurrentRow?.DataBoundItem is Courses selectedCourse))
             {
-                MessageBox.Show("Пожалуйста, выберите курс для добавления в избранное.", "Предупреждение",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(CoursesForm.Warning_SelectCourseForFavourites,
+                                CoursesForm.Title_Warning,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -176,8 +196,9 @@ namespace Education_Project2_4team
 
                 if (alreadyExists)
                 {
-                    MessageBox.Show("Этот курс уже добавлен в избранное.", "Информация",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(CoursesForm.Message_AlreadyInFavourites,
+                                    CoursesForm.Title_Warning,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -187,8 +208,9 @@ namespace Education_Project2_4team
                         IDCourses = selectedCourse.IDCourses
                     });
                     favDb.SaveChanges();
-                    MessageBox.Show("Курс добавлен в избранное!", "Успех",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(CoursesForm.Message_CourseAddedToFavourites,
+                                    CoursesForm.Title_Success,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -197,7 +219,7 @@ namespace Education_Project2_4team
         {
             var selectedCategory = comboBoxFilter.SelectedItem?.ToString();
             List<Courses> courses;
-            if (selectedCategory == "Все категории")
+            if (selectedCategory == ComboBoxFilterItems.Split(';')[0])
             {
                 courses = db.Courses.ToList();
             }
@@ -208,8 +230,9 @@ namespace Education_Project2_4team
 
             if (!courses.Any())
             {
-                MessageBox.Show("Курсы с выбранной категорией не найдены.", "Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(CoursesForm.Info_NoCoursesWithCategory,
+                                CoursesForm.Title_Warning,
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             DisplayCourses(courses);
