@@ -129,46 +129,48 @@ namespace Education_Project2_4team
         {
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                MessageBox.Show("Введите название курса", "Ошибка",
+                MessageBox.Show(AddCourse.AddCourse_TitleRequired, AddCourse.Common_Error,
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxDuration.SelectedItem == null)
             {
-                MessageBox.Show("Выберете продолжительность курса",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourse.AddCourse_DurationRequired, AddCourse.Common_Error,
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxCategory.SelectedItem == null)
             {
-                MessageBox.Show("Выберете категорию",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourse.AddCourse_CategoryRequired, AddCourse.Common_Error,
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
-                MessageBox.Show("Введите описание курса",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourse.AddCourse_DescriptionRequired, AddCourse.Common_Error,
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxLevelOfPreparation.SelectedItem == null)
             {
-                MessageBox.Show("Выберете уровень подготовки",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourse.AddCourse_LevelRequired, AddCourse.Common_Error,
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (comboBoxEducationForm.SelectedItem == null)
             {
-                MessageBox.Show("Выберете форму обучения",
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AddCourse.AddCourse_EduFormRequired, AddCourse.Common_Error,
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
             return true;
         }
+
     }
 }

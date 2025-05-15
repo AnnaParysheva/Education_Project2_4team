@@ -119,11 +119,6 @@ namespace Education_Project2_4team
             this.comboBoxDuration.FormattingEnabled = true;
             this.comboBoxDuration.IntegralHeight = false;
             this.comboBoxDuration.ItemHeight = 16;
-            this.comboBoxDuration.Items.AddRange(new object[] {
-            "1 месяц",
-            "3 месяца",
-            "6 месяцев",
-            "1 год"});
             this.comboBoxDuration.Location = new System.Drawing.Point(379, 92);
             this.comboBoxDuration.Name = "comboBoxDuration";
             this.comboBoxDuration.Size = new System.Drawing.Size(234, 24);
@@ -137,10 +132,6 @@ namespace Education_Project2_4team
             this.comboBoxLevelOfPreparation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxLevelOfPreparation.FormattingEnabled = true;
             this.comboBoxLevelOfPreparation.IntegralHeight = false;
-            this.comboBoxLevelOfPreparation.Items.AddRange(new object[] {
-            "Начальный",
-            "Средний",
-            "Продвинутый"});
             this.comboBoxLevelOfPreparation.Location = new System.Drawing.Point(58, 341);
             this.comboBoxLevelOfPreparation.Name = "comboBoxLevelOfPreparation";
             this.comboBoxLevelOfPreparation.Size = new System.Drawing.Size(234, 24);
@@ -156,10 +147,6 @@ namespace Education_Project2_4team
             this.comboBoxEducationForm.FormattingEnabled = true;
             this.comboBoxEducationForm.IntegralHeight = false;
             this.comboBoxEducationForm.ItemHeight = 16;
-            this.comboBoxEducationForm.Items.AddRange(new object[] {
-            "Очная",
-            "Онлайн",
-            "Смешанная"});
             this.comboBoxEducationForm.Location = new System.Drawing.Point(379, 212);
             this.comboBoxEducationForm.Name = "comboBoxEducationForm";
             this.comboBoxEducationForm.Size = new System.Drawing.Size(234, 24);
@@ -174,11 +161,6 @@ namespace Education_Project2_4team
             this.comboBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.IntegralHeight = false;
-            this.comboBoxCategory.Items.AddRange(new object[] {
-            "Технические науки",
-            "Гуманитарные науки",
-            "Естественные науки",
-            "Творчество"});
             this.comboBoxCategory.Location = new System.Drawing.Point(379, 341);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(234, 24);
