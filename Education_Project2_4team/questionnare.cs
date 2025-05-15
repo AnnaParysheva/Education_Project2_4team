@@ -20,6 +20,23 @@ namespace Education_Project2_4team
         {
             InitializeComponent();
             this.userId = userId;
+            LoadResources();
+        }
+        private void LoadResources()
+        {
+            this.labelQuestionnare.Text = questionnare.LabelQuestionnaire;
+            this.comboBoxCategory.Text = questionnare.ComboBoxCategoryDefault;
+            this.comboBoxLevel.Text = questionnare.ComboBoxLevelDefault;
+            this.comboBoxForm.Text = questionnare.ComboBoxFormDefault;
+            this.comboBoxDuration.Text = questionnare.ComboBoxDurationDefault;
+            comboBoxCategory.Items.Clear();
+            comboBoxCategory.Items.AddRange(questionnare.CategoryOptions.Split(';'));
+            comboBoxLevel.Items.Clear();
+            comboBoxLevel.Items.AddRange(questionnare.LevelOptions.Split(';'));
+            comboBoxForm.Items.Clear();
+            comboBoxForm.Items.AddRange(questionnare.FormOptions.Split(';'));
+            comboBoxDuration.Items.Clear();
+            comboBoxDuration.Items.AddRange(questionnare.DurationOptions.Split(';'));
         }
         private void btnChooseCourses_Click(object sender, EventArgs e)
         {
@@ -33,7 +50,12 @@ namespace Education_Project2_4team
             }
             else
             {
-                MessageBox.Show("Нет подходящих курсов по заданным параметрам.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    questionnare.Info_NoMatchingCourses,
+                    questionnare.Title_Result,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             }
         }
         private List<Courses> RecommendCourses()
@@ -53,8 +75,12 @@ namespace Education_Project2_4team
                         string.IsNullOrEmpty(selectedLevel) ||
                         string.IsNullOrEmpty(selectedDuration))
                     {
-                        MessageBox.Show("При отсутствии избранных курсов необходимо заполнить все поля анкеты",
-                                       "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(
+                            questionnare.Warning_EmptyQuestionnaireWithoutFavs,
+                            questionnare.Title_Error,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        );
                         return new List<Courses>();
                     }
                 }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CategoryOptions" xml:space="preserve">
-    <value>Технические науки; Гуманитарные науки; Естественные науки; Творчество</value>
+    <value>Технические науки;Гуманитарные науки;Естественные науки;Творчество</value>
   </data>
   <data name="ComboBoxCategoryDefault" xml:space="preserve">
     <value>Категория</value>
@@ -133,27 +133,27 @@
     <value>Уровень подготовки</value>
   </data>
   <data name="DurationOptions" xml:space="preserve">
-    <value>1 месяц; 3 месяца; 6 месяцев; 1 год</value>
+    <value>1 месяц;3 месяца;6 месяцев;1 год</value>
   </data>
   <data name="FormOptions" xml:space="preserve">
-    <value> Очная; Онлайн; Смешанная</value>
+    <value>Очная;Онлайн;Смешанная</value>
   </data>
   <data name="Info_NoMatchingCourses" xml:space="preserve">
-    <value> "Нет подходящих курсов по заданным параметрам."</value>
+    <value> Нет подходящих курсов по заданным параметрам</value>
   </data>
   <data name="LabelQuestionnaire" xml:space="preserve">
     <value>Анкетирование</value>
   </data>
   <data name="LevelOptions" xml:space="preserve">
-    <value>Начальный; Средний; Продвинутый</value>
+    <value>Начальный;Средний;Продвинутый</value>
   </data>
   <data name="Title_Error" xml:space="preserve">
-    <value>"Ошибка"</value>
+    <value>Ошибка</value>
   </data>
   <data name="Title_Result" xml:space="preserve">
-    <value>"Результат"</value>
+    <value>Результат</value>
   </data>
   <data name="Warning_EmptyQuestionnaireWithoutFavs" xml:space="preserve">
-    <value>"При отсутствии избранных курсов необходимо заполнить все поля анкеты"</value>
+    <value>При отсутствии избранных курсов необходимо заполнить все поля анкеты</value>
   </data>
 </root>

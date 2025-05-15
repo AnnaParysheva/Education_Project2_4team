@@ -213,6 +213,11 @@
     <Compile Include="questionnare.Designer.cs">
       <DependentUpon>questionnare.cs</DependentUpon>
     </Compile>
+    <Compile Include="questionnare2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>questionnare.resx</DependentUpon>
+    </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +226,8 @@
     </Compile>
     <EmbeddedResource Include="AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddCourse1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
@@ -247,6 +254,8 @@
     </Compile>
     <EmbeddedResource Include="questionnare.resx">
       <DependentUpon>questionnare.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>questionnare2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>

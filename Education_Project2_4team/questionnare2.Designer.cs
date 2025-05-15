@@ -22,7 +22,7 @@ namespace Education_Project2_4team {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class questionnare {
+    partial class questionnare {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -61,7 +61,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Технические науки; Гуманитарные науки; Естественные науки; Творчество.
+        ///   Ищет локализованную строку, похожую на Технические науки;Гуманитарные науки;Естественные науки;Творчество.
         /// </summary>
         internal static string CategoryOptions {
             get {
@@ -106,7 +106,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 1 месяц; 3 месяца; 6 месяцев; 1 год.
+        ///   Ищет локализованную строку, похожую на 1 месяц;3 месяца;6 месяцев;1 год.
         /// </summary>
         internal static string DurationOptions {
             get {
@@ -115,7 +115,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на  Очная; Онлайн; Смешанная.
+        ///   Ищет локализованную строку, похожую на Очная;Онлайн;Смешанная.
         /// </summary>
         internal static string FormOptions {
             get {
@@ -124,7 +124,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на  &quot;Нет подходящих курсов по заданным параметрам.&quot;.
+        ///   Ищет локализованную строку, похожую на  Нет подходящих курсов по заданным параметрам.
         /// </summary>
         internal static string Info_NoMatchingCourses {
             get {
@@ -142,7 +142,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Начальный; Средний; Продвинутый.
+        ///   Ищет локализованную строку, похожую на Начальный;Средний;Продвинутый.
         /// </summary>
         internal static string LevelOptions {
             get {
@@ -151,7 +151,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Ошибка&quot;.
+        ///   Ищет локализованную строку, похожую на Ошибка.
         /// </summary>
         internal static string Title_Error {
             get {
@@ -160,7 +160,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;Результат&quot;.
+        ///   Ищет локализованную строку, похожую на Результат.
         /// </summary>
         internal static string Title_Result {
             get {
@@ -169,7 +169,7 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;При отсутствии избранных курсов необходимо заполнить все поля анкеты&quot;.
+        ///   Ищет локализованную строку, похожую на При отсутствии избранных курсов необходимо заполнить все поля анкеты.
         /// </summary>
         internal static string Warning_EmptyQuestionnaireWithoutFavs {
             get {
