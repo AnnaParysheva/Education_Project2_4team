@@ -118,34 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddCourse_CategoryRequired" xml:space="preserve">
-    <value>"Выберете категорию"</value>
+    <value>Выберете категорию</value>
   </data>
   <data name="AddCourse_CourseNotFound" xml:space="preserve">
-    <value> "Курс не найден."</value>
+    <value> Курс не найден</value>
   </data>
   <data name="AddCourse_DescriptionRequired" xml:space="preserve">
-    <value> "Введите описание курса"</value>
+    <value> Введите описание курса</value>
   </data>
   <data name="AddCourse_DurationRequired" xml:space="preserve">
-    <value>"Выберете продолжительность курса"</value>
+    <value>Выберете продолжительность курса</value>
   </data>
   <data name="AddCourse_EduFormRequired" xml:space="preserve">
-    <value>"Выберете форму обучения"</value>
+    <value>Выберете форму обучения</value>
   </data>
   <data name="AddCourse_LevelRequired" xml:space="preserve">
-    <value>"Выберете уровень подготовки"</value>
+    <value>Выберете уровень подготовки</value>
   </data>
   <data name="AddCourse_SaveError" xml:space="preserve">
-    <value>"Ошибка при сохранении курса: {0}"</value>
+    <value>Ошибка при сохранении курса: {0}</value>
   </data>
   <data name="AddCourse_SaveSuccess_Add" xml:space="preserve">
-    <value> "Курс успешно добавлен!"</value>
+    <value>Курс успешно добавлен!</value>
   </data>
   <data name="AddCourse_SaveSuccess_Update" xml:space="preserve">
-    <value>"Курс успешно обновлён!"</value>
+    <value>Курс успешно обновлён!</value>
   </data>
   <data name="AddCourse_TitleRequired" xml:space="preserve">
-    <value>"Введите название курса"</value>
+    <value>Введите название курса</value>
   </data>
   <data name="ButtonSaveText" xml:space="preserve">
     <value>Сохранить</value>
