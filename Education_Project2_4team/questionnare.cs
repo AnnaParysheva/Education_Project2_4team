@@ -24,6 +24,7 @@ namespace Education_Project2_4team
         }
         private void LoadResources()
         {
+            this.Text=questionnare.LabelQuestionnaire;
             this.labelQuestionnare.Text = questionnare.LabelQuestionnaire;
             this.comboBoxCategory.Text = questionnare.ComboBoxCategoryDefault;
             this.comboBoxLevel.Text = questionnare.ComboBoxLevelDefault;

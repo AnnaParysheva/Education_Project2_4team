@@ -115,6 +115,60 @@ namespace Education_Project2_4team {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Категория.
+        /// </summary>
+        internal static string ColumnTitle_Category {
+            get {
+                return ResourceManager.GetString("ColumnTitle_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Описание.
+        /// </summary>
+        internal static string ColumnTitle_Description {
+            get {
+                return ResourceManager.GetString("ColumnTitle_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Продолжительность курса.
+        /// </summary>
+        internal static string ColumnTitle_Duration {
+            get {
+                return ResourceManager.GetString("ColumnTitle_Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма обучения.
+        /// </summary>
+        internal static string ColumnTitle_EducationalForm {
+            get {
+                return ResourceManager.GetString("ColumnTitle_EducationalForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Уровень подготовки.
+        /// </summary>
+        internal static string ColumnTitle_Level {
+            get {
+                return ResourceManager.GetString("ColumnTitle_Level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Название курса.
+        /// </summary>
+        internal static string ColumnTitle_Name {
+            get {
+                return ResourceManager.GetString("ColumnTitle_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Все категории;Технические науки;Гуманитарные науки;Естественные науки;Творчество.
         /// </summary>
         internal static string ComboBoxFilterItems {

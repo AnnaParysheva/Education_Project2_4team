@@ -22,7 +22,7 @@ namespace Education_Project2_4team
         {
             InitializeComponent();
             currentUserId = userId;
-            this.Text = "Избранное"; 
+            this.Text = FavouritesForm.label1_Text; 
             label1.Text = FavouritesForm.label1_Text;
             btnRemoveFromFavourites.Text = FavouritesForm.btnRemoveFromFavourites_Text;
             LoadFavourites();
@@ -63,12 +63,12 @@ namespace Education_Project2_4team
                 return;
             }
             dataGridViewFavouritesCourses.Columns["CourseId"].Visible = false;
-            dataGridViewFavouritesCourses.Columns["Title"].HeaderText = "Название";
-            dataGridViewFavouritesCourses.Columns["Duration"].HeaderText = "Длительность";
-            dataGridViewFavouritesCourses.Columns["Category"].HeaderText = "Категория";
-            dataGridViewFavouritesCourses.Columns["Description"].HeaderText = "Описание";
-            dataGridViewFavouritesCourses.Columns["Level"].HeaderText = "Уровень подготовки";
-            dataGridViewFavouritesCourses.Columns["EducationForm"].HeaderText = "Форма обучения";
+            dataGridViewFavouritesCourses.Columns["Title"].HeaderText = CoursesForm.ColumnTitle_Name;
+            dataGridViewFavouritesCourses.Columns["Duration"].HeaderText = CoursesForm.ColumnTitle_Duration;
+            dataGridViewFavouritesCourses.Columns["Category"].HeaderText = CoursesForm.ColumnTitle_Category;
+            dataGridViewFavouritesCourses.Columns["Description"].HeaderText = CoursesForm.ColumnTitle_Description;
+            dataGridViewFavouritesCourses.Columns["Level"].HeaderText = CoursesForm.ColumnTitle_Level;
+            dataGridViewFavouritesCourses.Columns["EducationForm"].HeaderText = CoursesForm.ColumnTitle_EducationalForm;
         }
         /// <summary>
         /// Удаляет выбранный курс из избранного.

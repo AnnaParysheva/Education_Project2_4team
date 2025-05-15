@@ -135,6 +135,24 @@
   <data name="ButtonRedactText" xml:space="preserve">
     <value>Редактировать</value>
   </data>
+  <data name="ColumnTitle_Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="ColumnTitle_Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ColumnTitle_Duration" xml:space="preserve">
+    <value>Продолжительность курса</value>
+  </data>
+  <data name="ColumnTitle_EducationalForm" xml:space="preserve">
+    <value>Форма обучения</value>
+  </data>
+  <data name="ColumnTitle_Level" xml:space="preserve">
+    <value>Уровень подготовки</value>
+  </data>
+  <data name="ColumnTitle_Name" xml:space="preserve">
+    <value>Название курса</value>
+  </data>
   <data name="ComboBoxFilterItems" xml:space="preserve">
     <value>Все категории;Технические науки;Гуманитарные науки;Естественные науки;Творчество</value>
   </data>

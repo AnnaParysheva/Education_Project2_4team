@@ -82,12 +82,12 @@ namespace Education_Project2_4team
             }
             dataGridViewInformation.AutoGenerateColumns = false;
             dataGridViewInformation.Columns.Clear();
-            dataGridViewInformation.Columns.Add(CreateTextColumn("Title", "Название курса", 200));
-            dataGridViewInformation.Columns.Add(CreateTextColumn("Description", "Описание", 150));
-            dataGridViewInformation.Columns.Add(CreateTextColumn("Category", "Категория", 150));
-            dataGridViewInformation.Columns.Add(CreateTextColumn("Duration", "Продолжительность", 120));
-            dataGridViewInformation.Columns.Add(CreateTextColumn("EducationalForm", "Форма обучения", 120));
-            dataGridViewInformation.Columns.Add(CreateTextColumn("LevelOfPreparation", "Уровень подготовки", 150));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Title", CoursesForm.ColumnTitle_Name, 200));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Description", CoursesForm.ColumnTitle_Description, 150));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Category", CoursesForm.ColumnTitle_Category, 150));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("Duration", CoursesForm.ColumnTitle_Duration, 120));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("EducationalForm", CoursesForm.ColumnTitle_EducationalForm, 120));
+            dataGridViewInformation.Columns.Add(CreateTextColumn("LevelOfPreparation", CoursesForm.ColumnTitle_Level, 150));
             dataGridViewInformation.DataSource = courses;
             dataGridViewInformation.RowHeadersVisible = false;
         }
