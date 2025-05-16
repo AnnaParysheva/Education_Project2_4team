@@ -296,6 +296,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="UserDatabase.db" />
+    <None Include="ТЗ проект 2 team 4.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
